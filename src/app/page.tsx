@@ -8,6 +8,7 @@ import BeforeAfterSection from "@/components/BeforeAfterSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import TherapistSection from "@/components/TherapistSection";
 import FlowSection from "@/components/FlowSection";
+import SimulationSection from "@/components/SimulationSection";
 import PriceSection from "@/components/PriceSection";
 import AccessSection from "@/components/AccessSection";
 import ReserveSection from "@/components/ReserveSection";
@@ -33,6 +34,9 @@ export default function Home() {
         <TestimonialsSection />
         <TherapistSection />
         <FlowSection />
+        <GradientDivider from="var(--color-ivory)" to="var(--color-charcoal)" />
+        <SimulationSection />
+        <GradientDivider from="var(--color-charcoal)" to="var(--color-warm-white)" />
         <PriceSection />
         <AccessSection />
         <GradientDivider from="var(--color-ivory)" to="var(--color-charcoal)" />
