@@ -13,6 +13,7 @@ import AccessSection from "@/components/AccessSection";
 import ReserveSection from "@/components/ReserveSection";
 import Footer from "@/components/Footer";
 import FloatingCTA from "@/components/FloatingCTA";
+import GradientDivider from "@/components/GradientDivider";
 
 export default function Home() {
   return (
@@ -21,15 +22,20 @@ export default function Home() {
       <main>
         <HeroSection />
         <AboutSection />
+        <GradientDivider from="var(--color-warm-white)" to="var(--color-charcoal)" />
         <ConcernSection />
+        <GradientDivider from="var(--color-charcoal)" to="var(--color-ivory)" />
         <DifferenceSection />
+        <GradientDivider from="var(--color-ivory)" to="var(--color-charcoal)" />
         <ResultsSection />
+        <GradientDivider from="var(--color-charcoal)" to="var(--color-warm-white)" />
         <BeforeAfterSection />
         <TestimonialsSection />
         <TherapistSection />
         <FlowSection />
         <PriceSection />
         <AccessSection />
+        <GradientDivider from="var(--color-ivory)" to="var(--color-charcoal)" />
         <ReserveSection />
       </main>
       <Footer />
