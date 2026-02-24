@@ -40,7 +40,7 @@ export default function AboutSection() {
           {[
             { end: 11, unit: "年", label: "創業年数" },
             { end: 20000, unit: "人+", label: "施術実績" },
-            { end: 29, unit: "個", label: "対象骨格数" },
+            { end: 5, unit: "年", label: "海外施術歴" },
             { end: 3, unit: "ヶ国", label: "海外実績" },
           ].map((s) => (
             <div key={s.label} className="text-center py-6 rounded-2xl bg-ivory/50 glass-card luxury-hover">

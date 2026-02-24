@@ -22,6 +22,7 @@ export default function Home() {
       <Header />
       <main>
         <HeroSection />
+        <BeforeAfterSection />
         <AboutSection />
         <GradientDivider from="var(--color-warm-white)" to="var(--color-charcoal)" />
         <ConcernSection />
@@ -30,7 +31,6 @@ export default function Home() {
         <GradientDivider from="var(--color-ivory)" to="var(--color-charcoal)" />
         <ResultsSection />
         <GradientDivider from="var(--color-charcoal)" to="var(--color-warm-white)" />
-        <BeforeAfterSection />
         <TestimonialsSection />
         <TherapistSection />
         <FlowSection />

@@ -38,6 +38,20 @@ export default function TestimonialsSection() {
             </div>
           ))}
         </ScrollReveal>
+
+        <ScrollReveal animation="fade-up" delay={400}>
+          <div className="mt-10 text-center">
+            <a
+              href="https://beauty.hotpepper.jp/kr/slnH000770985/review/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm text-gold tracking-wider hover:text-gold-dark transition-colors underline underline-offset-4 decoration-gold/30 hover:decoration-gold/60"
+            >
+              もっと他の方の口コミも見る
+              <span className="text-xs">→</span>
+            </a>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );
