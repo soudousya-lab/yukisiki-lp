@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ivory: #FAF8F5;
+  --color-greige: #E8E2DA;
+  --color-greige-dark: #C4BAB0;
+  --color-gold: #B8965A;
+  --color-gold-light: #D4B87C;
+  --color-gold-dark: #96793F;
+  --color-dusty-rose: #C4A0A0;
+  --color-dusty-rose-light: #D4B8B8;
+  --color-smoky-pink: #D4B0B8;
+  --color-charcoal: #3A3632;
+  --color-charcoal-light: #5A5550;
+  --color-warm-gray: #8A8480;
+  --color-warm-white: #FEFCFA;
+  --font-sans: "Noto Sans JP", "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Noto Serif JP", "Georgia", serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--color-charcoal);
+  background-color: var(--color-warm-white);
+}
+
+/* Gold gradient text */
+.text-gold-gradient {
+  background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-light) 50%, var(--color-gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Fade in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+/* Decorative line */
+.gold-line {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+}
+
+.gold-line-wide {
+  width: 120px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+}
+
+/* Section divider */
+.section-divider {
+  position: relative;
+}
+
+.section-divider::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+}
+
+/* CTA button pulse */
+@keyframes gentlePulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(184, 150, 90, 0.3); }
+  50% { box-shadow: 0 0 0 12px rgba(184, 150, 90, 0); }
+}
+
+.cta-pulse {
+  animation: gentlePulse 2.5s ease-in-out infinite;
+}
+
+/* Number counter style */
+.number-highlight {
+  font-family: "Georgia", serif;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}

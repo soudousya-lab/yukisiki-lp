@@ -1,0 +1,38 @@
+import type { Metadata } from "next";
+import "./globals.css";
+
+export const metadata: Metadata = {
+  title: "YUKISIKI 小顔矯正 中目黒 | 顔専門11年・20,000人以上の実績",
+  description:
+    "中目黒駅徒歩5分。顔の骨格構造から根本的にアプローチする顔専門サロン。創業11年、国内外20,000人以上の施術実績。海外からの技術指導オファーも受ける確かな技術力。",
+  openGraph: {
+    title: "YUKISIKI 小顔矯正 中目黒 | 顔専門11年・20,000人以上の実績",
+    description:
+      "顔の骨格構造から根本的にアプローチ。創業11年、国内外20,000人以上の施術実績を持つ顔専門サロン。",
+    type: "website",
+  },
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="ja">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className="font-sans antialiased">{children}</body>
+    </html>
+  );
+}
