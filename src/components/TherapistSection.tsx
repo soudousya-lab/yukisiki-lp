@@ -23,7 +23,7 @@ export default function TherapistSection() {
             <div className="aspect-[3/4] rounded-2xl border border-greige/20 overflow-hidden relative">
               <Image
                 src="/images/therapist/therapist-portrait.png"
-                alt="施術者 多賀"
+                alt="施術者 多賀勇輝"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 40vw"
@@ -33,7 +33,8 @@ export default function TherapistSection() {
 
           <ScrollReveal animation="fade-left" className="md:w-3/5">
             <p className="text-[10px] tracking-[0.3em] text-gold uppercase mb-2">Owner & Therapist</p>
-            <h3 className="font-serif text-xl md:text-2xl tracking-wider text-charcoal mb-1">多賀</h3>
+            <h3 className="font-serif text-xl md:text-2xl tracking-wider text-charcoal mb-1">多賀勇輝</h3>
+            <p className="text-[10px] tracking-[0.2em] text-warm-gray uppercase mb-1">YUKI TAGA</p>
             <p className="text-xs text-warm-gray tracking-wider mb-6">YUKISIKI 代表 ／ 鍼灸国家資格保有</p>
             <div className="gold-line mb-6" />
             <div className="space-y-4 text-sm text-charcoal-light leading-relaxed tracking-wide">
