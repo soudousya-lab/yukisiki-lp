@@ -5,7 +5,6 @@ import CTAButton from "./CTAButton";
 import CharReveal from "./CharReveal";
 import ShimmerText from "./ShimmerText";
 import FloatingParticles from "./FloatingParticles";
-import CountUp from "./CountUp";
 
 export default function HeroSection() {
   const [stage, setStage] = useState(0);
@@ -78,7 +77,7 @@ export default function HeroSection() {
           <CharReveal text="へ" isVisible={stage >= 3} startDelay={500} charDelay={60} />
         </h1>
 
-        {/* Sub copy with count up */}
+        {/* Sub copy */}
         <p
           className="mt-6 md:mt-8 text-sm md:text-base text-warm-gray leading-loose tracking-wider"
           style={{
@@ -87,11 +86,7 @@ export default function HeroSection() {
             transition: "opacity 0.8s ease, transform 0.8s ease",
           }}
         >
-          創業11年、国内外
-          <span className="text-gold text-lg md:text-xl mx-1">
-            <CountUp end={20000} duration={2500} className="text-gold text-lg md:text-xl" />
-          </span>
-          人以上の施術実績
+          →&ldquo;<span className="text-gold">骨</span>&rdquo;から変わる、唯一無二の小顔矯正
         </p>
 
         {/* Credential badges */}

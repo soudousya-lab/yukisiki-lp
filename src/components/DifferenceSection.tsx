@@ -2,13 +2,21 @@
 
 import SectionHeading from "./SectionHeading";
 import ScrollReveal from "./ScrollReveal";
-import { FiTarget, FiAward, FiHeart, FiGlobe } from "react-icons/fi";
+import CountUp from "./CountUp";
+import { FiTarget, FiGlobe } from "react-icons/fi";
 
 const differences = [
-  { icon: FiTarget, title: "骨格構造からアプローチ", desc: "顔を構成する29個の骨を一つひとつ丁寧に診断。蝶形骨をはじめとする深部の骨格にまでアプローチし、根本的な歪みを整えます。" },
-  { icon: FiAward, title: "医療レベルの解剖学知識", desc: "国家資格保有の施術者が、解剖学・生理学に基づいた科学的根拠のある施術を提供。「なんとなく」ではなく「構造的に」変えます。" },
-  { icon: FiHeart, title: "完全オーダーメイド施術", desc: "お客様一人ひとりの骨格や筋肉の状態を見極め、最適な施術プランをご提案。機械は一切使わず、すべて手技で丁寧に施術します。" },
-  { icon: FiGlobe, title: "海外からも認められた技術", desc: "シンガポール・上海など海外サロンからの技術指導オファーを受ける確かな実力。国内外20,000人以上の施術実績が信頼の証です。" },
+  {
+    icon: FiTarget,
+    title: "骨格構造からアプローチ",
+    desc: "顔だけを診るのではなく、首、肩、骨盤など広い視点から骨格の本質にアプローチし、根本から整えます。",
+  },
+  {
+    icon: FiGlobe,
+    title: "海外からも認められた技術",
+    desc: "シンガポール・上海など海外サロンからの施術依頼を受ける確かな実力。",
+    hasCounter: true,
+  },
 ];
 
 export default function DifferenceSection() {
@@ -27,6 +35,13 @@ export default function DifferenceSection() {
                 <h3 className="font-serif text-base md:text-lg tracking-wider text-charcoal">{d.title}</h3>
               </div>
               <p className="text-sm text-charcoal-light leading-relaxed tracking-wide">{d.desc}</p>
+              {d.hasCounter && (
+                <div className="mt-5 flex items-baseline gap-1">
+                  <span className="text-xs text-charcoal-light">国内外</span>
+                  <CountUp end={20000} className="text-2xl text-gold" />
+                  <span className="text-xs text-charcoal-light">人以上の施術実績</span>
+                </div>
+              )}
             </div>
           ))}
         </ScrollReveal>

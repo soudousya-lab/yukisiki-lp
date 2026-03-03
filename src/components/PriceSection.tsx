@@ -11,36 +11,27 @@ export default function PriceSection() {
       <div className="max-w-3xl mx-auto px-6">
         <SectionHeading en="Price" ja="料金" />
 
-        <ScrollReveal animation="fade-up">
-          <div className="text-center mb-10">
-            <p className="text-sm text-charcoal-light tracking-wider leading-relaxed">
-              お一人おひとりに最適な施術プランをご提案いたします。
-              <br />まずはお気軽にご相談ください。
-            </p>
-          </div>
-        </ScrollReveal>
-
         <ScrollReveal animation="scale-in">
           <div className="border border-gold/20 rounded-2xl overflow-hidden bg-gradient-to-b from-ivory to-warm-white glass-card">
             <div className="bg-charcoal text-center py-5">
-              <p className="text-[10px] tracking-[0.3em] text-gold-light uppercase">Trial Course</p>
-              <p className="font-serif text-lg tracking-wider text-warm-white mt-1">初回体験コース</p>
+              <p className="text-[10px] tracking-[0.3em] text-dusty-rose uppercase mb-1">YUKISIKI人気 NO.1</p>
+              <p className="font-serif text-lg tracking-wider text-warm-white">小顔矯正 × 美容鍼</p>
             </div>
             <div className="p-8 md:p-10 text-center">
-              <p className="text-sm text-charcoal-light tracking-wider mb-4">カウンセリング＋施術（約60〜90分）</p>
-              <div className="flex items-baseline justify-center gap-1">
-                <span className="text-sm text-warm-gray line-through">¥22,000</span>
-                <span className="text-sm text-warm-gray ml-2">→</span>
+              <p className="text-sm text-charcoal-light tracking-wider mb-4">カウンセリング × 小顔矯正 × 美容鍼</p>
+              <p className="text-[10px] text-dusty-rose tracking-wider mb-4">初回限定</p>
+              <div className="flex items-baseline justify-center gap-2">
+                <span className="text-sm text-warm-gray line-through">¥15,000</span>
+                <span className="text-sm text-warm-gray">→</span>
               </div>
               <div className="flex items-baseline justify-center mt-2">
                 <span className="text-sm text-gold">¥</span>
-                <CountUp end={11000} className="text-4xl md:text-5xl text-gold" prefix="" />
+                <CountUp end={12800} className="text-4xl md:text-5xl text-gold" prefix="" />
                 <span className="text-sm text-charcoal-light ml-2">（税込）</span>
               </div>
-              <p className="mt-3 text-[10px] text-dusty-rose tracking-wider">※ 初回限定・お一人様一回限り</p>
               <div className="gold-line mx-auto my-6" />
               <ul className="text-left space-y-2 max-w-xs mx-auto">
-                {["骨格診断カウンセリング", "オーダーメイド施術", "アフターケアアドバイス", "ホームケア指導"].map((item) => (
+                {["骨格カウンセリング", "オーダーメイド施術", "アフターケアアドバイス", "ホームケア紹介"].map((item) => (
                   <li key={item} className="flex items-center gap-2 text-sm text-charcoal-light">
                     <span className="text-gold text-xs">◆</span>{item}
                   </li>

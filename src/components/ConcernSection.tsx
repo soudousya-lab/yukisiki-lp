@@ -4,10 +4,22 @@ import SectionHeading from "./SectionHeading";
 import ScrollReveal from "./ScrollReveal";
 
 const concerns = [
-  { age: "20代後半", items: ["小顔になりたい", "写真映えしたい", "エラ張りが気になる", "SNS映えする輪郭に"] },
-  { age: "30代", items: ["顔の左右差が気になる", "たるみが出てきた", "ほうれい線が目立つ", "疲れ顔に見える"] },
-  { age: "40代", items: ["フェイスラインの崩れ", "老け顔に見られる", "顔全体のたるみ", "輪郭をシャープに"] },
-  { age: "50代", items: ["若々しい印象を保ちたい", "品のある顔立ちに", "顔の歪みを整えたい", "自信を取り戻したい"] },
+  {
+    title: "エラ張り・頬骨",
+    items: ["エラが張っている", "頬骨が気になる", "ベース型の輪郭を変えたい"],
+  },
+  {
+    title: "たるみ・年齢顔",
+    items: ["フェイスラインのたるみ", "ほうれい線が目立つ", "疲れ顔に見える"],
+  },
+  {
+    title: "撮影・イベント前",
+    items: ["写真映えしたい", "大事なイベント前に", "短期間で変化を実感"],
+  },
+  {
+    title: "鼻筋・顔型",
+    items: ["鼻筋を通したい", "丸顔・面長を改善", "左右差が気になる"],
+  },
 ];
 
 export default function ConcernSection() {
@@ -18,8 +30,8 @@ export default function ConcernSection() {
 
         <ScrollReveal className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6" stagger={150}>
           {concerns.map((c) => (
-            <div key={c.age} className="rounded-2xl p-5 md:p-6 glass-card-dark luxury-hover">
-              <p className="text-xs text-gold-light tracking-wider mb-4 text-center">{c.age}</p>
+            <div key={c.title} className="rounded-2xl p-5 md:p-6 glass-card-dark luxury-hover">
+              <p className="text-xs text-gold-light tracking-wider mb-4 text-center font-serif">{c.title}</p>
               <ul className="space-y-2.5">
                 {c.items.map((item) => (
                   <li key={item} className="flex items-start gap-2 text-xs text-greige-dark leading-relaxed tracking-wide">

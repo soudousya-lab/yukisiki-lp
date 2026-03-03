@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState, useEffect, useCallback } from "react";
+import Image from "next/image";
 import ScrollReveal from "./ScrollReveal";
 
 const cases = [
@@ -8,22 +9,19 @@ const cases = [
     age: "30代女性",
     concern: "顔の左右差・エラ張り",
     result: "左右のバランスが整い、フェイスラインがすっきり",
-    before: "/images/before-after/case01-before.jpg",
-    after: "/images/before-after/case01-after.jpg",
+    image: "/images/before-after/case01.png",
+  },
+  {
+    age: "30代女性",
+    concern: "丸顔・むくみ",
+    result: "骨格から整えることでシャープな輪郭に",
+    image: "/images/before-after/case02.png",
   },
   {
     age: "40代女性",
     concern: "たるみ・ほうれい線",
     result: "頬の位置が上がり、ほうれい線が目立たなく",
-    before: "/images/before-after/case02-before.jpg",
-    after: "/images/before-after/case02-after.jpg",
-  },
-  {
-    age: "20代女性",
-    concern: "丸顔・むくみ",
-    result: "骨格から整えることでシャープな輪郭に",
-    before: "/images/before-after/case03-before.jpg",
-    after: "/images/before-after/case03-after.jpg",
+    image: "/images/before-after/case03.png",
   },
 ];
 
@@ -64,12 +62,6 @@ export default function BeforeAfterSection() {
             <div className="gold-line mx-auto mt-3" />
           </div>
         </ScrollReveal>
-
-        <ScrollReveal animation="fade-up">
-          <p className="text-center text-xs text-warm-gray tracking-wider mb-6">
-            ※写真の掲載準備中です。実際の症例はカウンセリング時にご覧いただけます。
-          </p>
-        </ScrollReveal>
       </div>
 
       {/* Horizontal scroll container */}
@@ -82,18 +74,17 @@ export default function BeforeAfterSection() {
           {cases.map((c, i) => (
             <div
               key={i}
-              className="flex-shrink-0 w-[80vw] md:w-[360px] snap-center rounded-2xl overflow-hidden bg-warm-white border border-greige/20 shadow-sm"
+              className="flex-shrink-0 w-[80vw] md:w-[420px] snap-center rounded-2xl overflow-hidden bg-warm-white border border-greige/20 shadow-sm"
             >
-              {/* Before / After visual */}
-              <div className="aspect-[4/3] bg-gradient-to-br from-greige/20 to-dusty-rose-light/20 flex items-center justify-center relative">
-                <div className="text-center">
-                  <div className="flex items-center justify-center gap-4 text-xs text-warm-gray tracking-wider">
-                    <span className="px-3 py-1 border border-greige/40 rounded-full">Before</span>
-                    <span className="text-gold">→</span>
-                    <span className="px-3 py-1 border border-gold/30 rounded-full text-gold">After</span>
-                  </div>
-                  <p className="mt-3 text-[10px] text-warm-gray">Photo coming soon</p>
-                </div>
+              {/* Before / After 画像 */}
+              <div className="relative aspect-[4/3] bg-greige/10">
+                <Image
+                  src={c.image}
+                  alt={`${c.age} ${c.concern} Before/After`}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 80vw, 420px"
+                />
               </div>
               {/* Info */}
               <div className="p-5">
