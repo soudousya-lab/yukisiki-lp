@@ -17,7 +17,6 @@ export default function HeroSection() {
       setTimeout(() => setStage(4), 1800),
       setTimeout(() => setStage(5), 2200),
       setTimeout(() => setStage(6), 2600),
-      setTimeout(() => setStage(7), 3200),
     ];
     return () => timers.forEach(clearTimeout);
   }, []);
@@ -69,25 +68,14 @@ export default function HeroSection() {
 
         {/* Main copy - character reveal */}
         <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-relaxed md:leading-relaxed tracking-wider text-charcoal">
-          <CharReveal text="顔の歪みを整え、" isVisible={stage >= 2} charDelay={60} />
-          <br />
+          <CharReveal text="&ldquo;" isVisible={stage >= 2} charDelay={60} />
           <ShimmerText className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif">
-            <CharReveal text="10年前の輪郭" isVisible={stage >= 3} charDelay={70} />
+            <CharReveal text="骨" isVisible={stage >= 2} charDelay={60} startDelay={80} />
           </ShimmerText>
-          <CharReveal text="へ" isVisible={stage >= 3} startDelay={500} charDelay={60} />
+          <CharReveal text="&rdquo;から変わる、" isVisible={stage >= 2} charDelay={60} startDelay={160} />
+          <br />
+          <CharReveal text="唯一無二の小顔矯正" isVisible={stage >= 3} charDelay={70} />
         </h1>
-
-        {/* Sub copy */}
-        <p
-          className="mt-6 md:mt-8 text-sm md:text-base text-warm-gray leading-loose tracking-wider"
-          style={{
-            opacity: stage >= 4 ? 1 : 0,
-            transform: stage >= 4 ? "translateY(0)" : "translateY(20px)",
-            transition: "opacity 0.8s ease, transform 0.8s ease",
-          }}
-        >
-          →&ldquo;<span className="text-gold">骨</span>&rdquo;から変わる、唯一無二の小顔矯正
-        </p>
 
         {/* Credential badges */}
         <div className="mt-6 flex flex-wrap justify-center gap-3 md:gap-4">
@@ -96,8 +84,8 @@ export default function HeroSection() {
               key={badge}
               className="text-[10px] md:text-xs text-charcoal-light tracking-wider bg-greige/30 px-4 py-1.5 rounded-full"
               style={{
-                opacity: stage >= 5 ? 1 : 0,
-                transform: stage >= 5 ? "translateY(0) scale(1)" : "translateY(10px) scale(0.95)",
+                opacity: stage >= 4 ? 1 : 0,
+                transform: stage >= 4 ? "translateY(0) scale(1)" : "translateY(10px) scale(0.95)",
                 transition: `opacity 0.5s ease ${i * 120}ms, transform 0.5s ease ${i * 120}ms`,
               }}
             >
@@ -110,8 +98,8 @@ export default function HeroSection() {
         <div
           className="mt-10 md:mt-14"
           style={{
-            opacity: stage >= 6 ? 1 : 0,
-            transform: stage >= 6 ? "translateY(0) scale(1)" : "translateY(20px) scale(0.95)",
+            opacity: stage >= 5 ? 1 : 0,
+            transform: stage >= 5 ? "translateY(0) scale(1)" : "translateY(20px) scale(0.95)",
             transition: "opacity 0.8s ease, transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)",
           }}
         >
@@ -125,7 +113,7 @@ export default function HeroSection() {
       {/* Scroll indicator */}
       <div
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 scroll-indicator"
-        style={{ opacity: stage >= 7 ? 1 : 0, transition: "opacity 1s ease" }}
+        style={{ opacity: stage >= 6 ? 1 : 0, transition: "opacity 1s ease" }}
       >
         <span className="text-[9px] tracking-[0.2em] text-warm-gray uppercase">Scroll</span>
         <div className="w-px h-8 bg-gradient-to-b from-gold/50 to-transparent" />
