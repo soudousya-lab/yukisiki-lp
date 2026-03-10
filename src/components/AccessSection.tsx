@@ -14,7 +14,7 @@ export default function AccessSection() {
           <ScrollReveal animation="fade-right" className="md:w-1/2 mb-8 md:mb-0">
             <div className="aspect-square md:aspect-[4/3] rounded-2xl overflow-hidden border border-greige/30">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3242.0!2d139.6987!3d35.6438!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z5Lit55uu6buS!5e0!3m2!1sja!2sjp!4v1600000000000!5m2!1sja!2sjp"
+                src="https://www.google.com/maps?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E7%9B%AE%E9%BB%92%E5%8C%BA%E4%B8%8A%E7%9B%AE%E9%BB%923-15-2+W-1&output=embed&hl=ja"
                 width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade" title="YUKISIKI 中目黒 地図"
               />

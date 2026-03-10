@@ -9,12 +9,12 @@ import ScrollReveal from "./ScrollReveal";
 const concerns = [
   { id: "kogao", label: "小顔になりたい", icon: "◇" },
   { id: "yugami", label: "顔の歪み・左右差", icon: "◇" },
-  { id: "tarumi", label: "たるみが気になる", icon: "◇" },
+  { id: "era", label: "エラ張り・頬骨", icon: "◇" },
   { id: "nijuago", label: "二重顎・むくみ", icon: "◇" },
   { id: "biyou", label: "肌荒れ・美肌", icon: "◇" },
   { id: "zenshin", label: "姿勢・全身の歪み", icon: "◇" },
-  { id: "event", label: "撮影・イベント前", icon: "◇" },
-  { id: "hana", label: "鼻筋を通したい", icon: "◇" },
+  { id: "tarumi", label: "たるみ・年齢顔", icon: "◇" },
+  { id: "kaogata", label: "丸顔・面長・顔型", icon: "◇" },
 ] as const;
 
 type ConcernId = (typeof concerns)[number]["id"];
@@ -61,20 +61,20 @@ const menuMap: Record<ConcernId, Menu[]> = {
       bookingUrl: "https://beauty.hotpepper.jp/CSP/kr/reserve/?storeId=H000770985&couponId=CP00000011648877&add=0",
     },
   ],
-  tarumi: [
+  era: [
     {
-      name: "小顔矯正×美容鍼×頭蓋骨調整",
-      price: 14800,
-      description: "たるみ改善に特化。年齢と共に緩む顔・頭部の骨格を整え、引き締まったフェイスラインへ。",
-      tag: "たるみ特化",
-      bookingUrl: "https://beauty.hotpepper.jp/CSP/kr/reserve/?storeId=H000770985&couponId=CP00000011648808&add=0",
+      name: "小顔矯正×美容鍼",
+      price: 12800,
+      description: "エラ張り・頬骨の張りに特化。YUKISIKI式独自の骨格アプローチで、スッキリとしたフェイスラインへ。",
+      tag: "エラ・頬骨特化",
+      bookingUrl: "https://beauty.hotpepper.jp/CSP/kr/reserve/?storeId=H000770985&couponId=CP00000011648774&add=0",
     },
     {
-      name: "小顔矯正×美容鍼×全身骨格調整",
-      price: 17800,
-      description: "効果追求コース。小顔から美肌、正しい姿勢まで全方位からアプローチ。",
-      tag: "徹底ケア",
-      bookingUrl: "https://beauty.hotpepper.jp/CSP/kr/reserve/?storeId=H000770985&couponId=CP00000012227968&add=0",
+      name: "小顔矯正×美容鍼×首肩矯正",
+      price: 14800,
+      description: "エラ張りの原因となる噛み締め・食いしばりを首肩の矯正から根本改善。骨格と筋肉の両方にアプローチ。",
+      tag: "根本改善",
+      bookingUrl: "https://beauty.hotpepper.jp/CSP/kr/reserve/?storeId=H000770985&couponId=CP00000011648792&add=0",
     },
   ],
   nijuago: [
@@ -125,36 +125,36 @@ const menuMap: Record<ConcernId, Menu[]> = {
       bookingUrl: "https://beauty.hotpepper.jp/CSP/kr/reserve/?storeId=H000770985&couponId=CP00000012227968&add=0",
     },
   ],
-  event: [
+  tarumi: [
     {
-      name: "小顔×首肩矯正×リンパ流し",
-      price: 15000,
-      description: "イベント・撮影前に。瞬間的な変化をメインに据えた特別コース。",
-      tag: "撮影前に",
-      bookingUrl: "https://beauty.hotpepper.jp/CSP/kr/reserve/?storeId=H000770985&couponId=CP00000012233008&add=0",
+      name: "小顔矯正×美容鍼×頭蓋骨調整",
+      price: 14800,
+      description: "たるみ・年齢顔に特化。年齢と共に緩む顔・頭部の骨格を整え、引き締まったフェイスラインへ。",
+      tag: "たるみ特化",
+      bookingUrl: "https://beauty.hotpepper.jp/CSP/kr/reserve/?storeId=H000770985&couponId=CP00000011648808&add=0",
     },
     {
-      name: "小顔&歪み矯正×美容鍼×首肩矯正",
-      price: 14800,
-      description: "骨格からも肌からも美顔にデザイン。大切な日に最高のコンディションを。",
-      tag: "特別な日に",
-      bookingUrl: "https://beauty.hotpepper.jp/CSP/kr/reserve/?storeId=H000770985&couponId=CP00000012228013&add=0",
+      name: "小顔矯正×美容鍼×全身骨格調整",
+      price: 17800,
+      description: "エイジングケアの決定版。小顔から美肌、正しい姿勢まで全方位からアプローチし若々しい印象へ。",
+      tag: "徹底ケア",
+      bookingUrl: "https://beauty.hotpepper.jp/CSP/kr/reserve/?storeId=H000770985&couponId=CP00000012227968&add=0",
     },
   ],
-  hana: [
+  kaogata: [
     {
       name: "小顔矯正×美容鍼",
       price: 12800,
-      description: "小顔矯正に鼻筋へのアプローチを含む人気No.1施術。鼻高矯正のオプション追加もおすすめ。",
-      tag: "人気No.1",
+      description: "丸顔・面長など顔型のお悩みに。骨格バランスを整え、理想のフェイスラインにデザインします。",
+      tag: "顔型補正",
       bookingUrl: "https://beauty.hotpepper.jp/CSP/kr/reserve/?storeId=H000770985&couponId=CP00000011648774&add=0",
     },
     {
-      name: "小顔×首肩矯正",
+      name: "歪み矯正×全身骨格調整",
       price: 12800,
-      description: "骨格全体を整えながら顔の各パーツにアプローチ。鼻高矯正（¥5,000）の併用がおすすめ。",
-      tag: "+鼻高矯正",
-      bookingUrl: "https://beauty.hotpepper.jp/CSP/kr/reserve/?storeId=H000770985&couponId=CP00000012232945&add=0",
+      description: "顔型は全身のバランスと密接に関係。顔と身体の骨格を同時に整え、根本から顔型を改善。",
+      tag: "全身から改善",
+      bookingUrl: "https://beauty.hotpepper.jp/CSP/kr/reserve/?storeId=H000770985&couponId=CP00000012227961&add=0",
     },
   ],
 };
