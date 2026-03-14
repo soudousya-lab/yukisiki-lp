@@ -43,7 +43,7 @@ export default function YugamiContent() {
             YUKISIKI
           </span>
           <a
-            href="https://yukisiki-kogao.com/"
+            href="http://b.hpr.jp/kr/hp/H000770985"
             target="_blank"
             rel="noopener noreferrer"
             className="hidden md:inline-block bg-gold text-white text-xs tracking-wider px-6 py-2.5 rounded-full hover:bg-gold-dark hover:scale-[1.03] transition-all cta-shine"
@@ -360,7 +360,7 @@ export default function YugamiContent() {
                 <span className="tracking-wider">080-6320-2573</span>
               </a>
               <a
-                href="https://yukisiki-kogao.com/"
+                href="http://b.hpr.jp/kr/hp/H000770985"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 bg-gold text-white rounded-full px-8 py-4 hover:bg-gold-dark transition-colors cta-pulse cta-shine w-full sm:w-auto justify-center"
