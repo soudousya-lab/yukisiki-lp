@@ -4,7 +4,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 interface Props {
   en: string;
-  ja: string;
+  ja: React.ReactNode;
   light?: boolean;
 }
 

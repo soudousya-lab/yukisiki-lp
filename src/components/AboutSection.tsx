@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+import { FiArrowRight } from "react-icons/fi";
 import SectionHeading from "./SectionHeading";
 import ScrollReveal from "./ScrollReveal";
 
@@ -75,6 +77,62 @@ export default function AboutSection() {
               完全オーダーメイドの施術で
               一時的ではない<span className="text-gold">&ldquo;持続する変化&rdquo;</span>を実現します。
             </p>
+          </div>
+        </ScrollReveal>
+
+        {/* 専門メニューへのリンク */}
+        <ScrollReveal animation="fade-up" delay={600}>
+          <div className="mt-16">
+            <p className="text-center text-[10px] tracking-[0.3em] text-gold uppercase mb-8">
+              Specialized Menu
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Link
+                href="/kogao"
+                className="group rounded-2xl p-8 glass-card luxury-hover text-center block"
+              >
+                <p className="text-[10px] tracking-[0.3em] text-gold uppercase mb-4">
+                  Small Face Correction
+                </p>
+                <h3 className="font-serif text-lg md:text-xl tracking-wider text-charcoal mb-2">
+                  YUKISIKI
+                </h3>
+                <h3 className="font-serif text-base md:text-lg tracking-wider text-charcoal mb-4">
+                  小顔矯正
+                </h3>
+                <div className="gold-line mx-auto mb-5" />
+                <p className="text-xs text-charcoal-light leading-relaxed tracking-wide mb-5 max-w-xs mx-auto">
+                  骨格を根本から整え、顔を本来あるべき姿に
+                  <span className="text-gold">&ldquo;最適化&rdquo;</span>する。
+                </p>
+                <span className="inline-flex items-center gap-1.5 text-xs text-gold tracking-wider group-hover:gap-2.5 transition-all">
+                  詳しく見る <FiArrowRight className="w-3.5 h-3.5" />
+                </span>
+              </Link>
+
+              <Link
+                href="/yugami"
+                className="group rounded-2xl p-8 glass-card luxury-hover text-center block"
+              >
+                <p className="text-[10px] tracking-[0.3em] text-gold uppercase mb-4">
+                  Face Alignment
+                </p>
+                <h3 className="font-serif text-lg md:text-xl tracking-wider text-charcoal mb-2">
+                  YUKISIKI
+                </h3>
+                <h3 className="font-serif text-base md:text-lg tracking-wider text-charcoal mb-4">
+                  顔の歪み矯正
+                </h3>
+                <div className="gold-line mx-auto mb-5" />
+                <p className="text-xs text-charcoal-light leading-relaxed tracking-wide mb-5 max-w-xs mx-auto">
+                  顔に蓄積した歪みを正しく整え、
+                  顔を<span className="text-gold">&ldquo;リセット&rdquo;</span>する。
+                </p>
+                <span className="inline-flex items-center gap-1.5 text-xs text-gold tracking-wider group-hover:gap-2.5 transition-all">
+                  詳しく見る <FiArrowRight className="w-3.5 h-3.5" />
+                </span>
+              </Link>
+            </div>
           </div>
         </ScrollReveal>
       </div>
