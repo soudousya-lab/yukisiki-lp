@@ -1,15 +1,22 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+const siteUrl = "https://yukisiki.com";
+
 export const metadata: Metadata = {
-  title: "YUKISIKI 小顔矯正 中目黒 | 顔専門11年・20,000人以上の実績",
+  metadataBase: new URL(siteUrl),
+  alternates: {
+    canonical: "/",
+  },
+  title: "小顔・顔の歪み矯正専門サロン｜YUKISIKI小顔矯正中目黒",
   description:
     "中目黒駅徒歩5分。顔の骨格構造から根本的にアプローチする顔専門サロン。創業11年、国内外20,000人以上の施術実績。海外からの技術指導オファーも受ける確かな技術力。",
   openGraph: {
-    title: "YUKISIKI 小顔矯正 中目黒 | 顔専門11年・20,000人以上の実績",
+    title: "小顔・顔の歪み矯正専門サロン｜YUKISIKI小顔矯正中目黒",
     description:
       "顔の骨格構造から根本的にアプローチ。創業11年、国内外20,000人以上の施術実績を持つ顔専門サロン。",
     type: "website",
+    url: siteUrl,
   },
 };
 

@@ -6,22 +6,34 @@ import ScrollReveal from "./ScrollReveal";
 
 const cases = [
   {
-    age: "30代女性",
-    concern: "顔の左右差・エラ張り",
-    result: "左右のバランスが整い、フェイスラインがすっきり",
-    image: "/images/before-after/case01.png",
+    age: "10代女性",
+    concern: "顔の左右差・丸顔が気になる",
+    result: "肩の歪み、顎関節、フェイスラインの修正",
+    image: "/images/before-after/case-face-01.png",
+  },
+  {
+    age: "20代女性",
+    concern: "出産を機に顔が変わってきた",
+    result: "顔の歪み、顔の立体感を修正",
+    image: "/images/before-after/case-face-02.png",
   },
   {
     age: "30代女性",
-    concern: "丸顔・むくみ",
-    result: "骨格から整えることでシャープな輪郭に",
-    image: "/images/before-after/case02.png",
+    concern: "むくまない顔にしたい",
+    result: "顎関節、上部頸椎、蝶形骨を修正",
+    image: "/images/before-after/case-face-03.png",
   },
   {
-    age: "40代女性",
-    concern: "たるみ・ほうれい線",
-    result: "頬の位置が上がり、ほうれい線が目立たなく",
-    image: "/images/before-after/case03.png",
+    age: "30代女性",
+    concern: "年齢と共に顔が変わってきた",
+    result: "肩の内巻き、顎関節、顔比率を修正",
+    image: "/images/before-after/case-face-04.png",
+  },
+  {
+    age: "50代女性",
+    concern: "たるみと顔が伸びてきた",
+    result: "ストレートネック、顎関節、顔比率の修正",
+    image: "/images/before-after/case-face-05.png",
   },
 ];
 
