@@ -10,7 +10,7 @@ const cases = [
     age: "20代女性",
     concern: "出産を機に顔が変わってきた",
     result: "首肩の歪み、顎関節、フェイスラインを修正",
-    image: "/images/before-after/case-face-01.png",
+    image: "/images/before-after/case-face-02.png",
     caseId: "case-01",
   },
   {
@@ -80,6 +80,8 @@ export default function BeforeAfterSection() {
   };
 
   const scrollToCase = useCallback((caseId: string) => {
+    // URLハッシュを更新（yukisiki.com/#case-01 形式）
+    window.history.pushState(null, "", `#${caseId}`);
     const el = document.getElementById(caseId);
     if (el) {
       const headerOffset = 72;

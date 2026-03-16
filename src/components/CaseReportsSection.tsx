@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useCallback } from "react";
+import { useRef, useCallback, useEffect } from "react";
 import Image from "next/image";
 import ScrollReveal from "./ScrollReveal";
 
@@ -11,7 +11,7 @@ const cases = [
     age: "20代女性",
     title: "出産を機に顔が変わってきた",
     approach: "首肩の歪み、顎関節、フェイスラインを修正",
-    beforeAfterImage: "/images/before-after/case-face-01.png",
+    beforeAfterImage: "/images/before-after/case-face-02.png",
     analysisImage: "/images/before-after/01_0.png",
     sections: [
       {
@@ -111,14 +111,24 @@ export default function CaseReportsSection() {
   const sliderRef = useRef<HTMLDivElement>(null);
   const pointerStart = useRef<{ x: number; y: number } | null>(null);
 
-  const scrollToCase = useCallback((caseId: string) => {
+  const scrollToCase = useCallback((caseId: string, smooth = true) => {
     const el = document.getElementById(caseId);
     if (el) {
       const headerOffset = 72;
       const top = el.getBoundingClientRect().top + window.scrollY - headerOffset;
-      window.scrollTo({ top, behavior: "smooth" });
+      window.scrollTo({ top, behavior: smooth ? "smooth" : "instant" });
     }
   }, []);
+
+  // ページ読み込み時にURLハッシュがあれば該当症例までスクロール
+  useEffect(() => {
+    const hash = window.location.hash.replace("#", "");
+    if (hash && hash.startsWith("case-")) {
+      // DOMレンダリング完了を待つ
+      const timer = setTimeout(() => scrollToCase(hash, false), 300);
+      return () => clearTimeout(timer);
+    }
+  }, [scrollToCase]);
 
   const handlePointerDown = (e: React.PointerEvent) => {
     pointerStart.current = { x: e.clientX, y: e.clientY };
@@ -134,6 +144,7 @@ export default function CaseReportsSection() {
       }
     }
     pointerStart.current = null;
+    window.history.pushState(null, "", `#${caseId}`);
     scrollToCase(caseId);
   };
 
