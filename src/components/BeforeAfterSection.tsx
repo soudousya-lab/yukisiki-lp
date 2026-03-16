@@ -2,38 +2,44 @@
 
 import { useRef, useState, useEffect, useCallback } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import ScrollReveal from "./ScrollReveal";
 
 const cases = [
   {
-    age: "10代女性",
-    concern: "顔の左右差・丸顔が気になる",
-    result: "肩の歪み、顎関節、フェイスラインの修正",
+    age: "20代女性",
+    concern: "出産を機に顔が変わってきた",
+    result: "首肩の歪み、顎関節、フェイスラインを修正",
     image: "/images/before-after/case-face-01.png",
+    caseId: "case-01",
   },
   {
     age: "20代女性",
-    concern: "出産を機に顔が変わってきた",
-    result: "顔の歪み、顔の立体感を修正",
-    image: "/images/before-after/case-face-02.png",
+    concern: "とにかく小顔になりたい",
+    result: "ストレートネック、顎関節、顔比率を修正",
+    image: "/images/before-after/20代女性02.png",
+    caseId: "case-02",
   },
   {
     age: "30代女性",
-    concern: "むくまない顔にしたい",
+    concern: "顔の歪み、むくまない顔にしたい",
     result: "顎関節、上部頸椎、蝶形骨を修正",
     image: "/images/before-after/case-face-03.png",
+    caseId: "case-03",
   },
   {
-    age: "30代女性",
-    concern: "年齢と共に顔が変わってきた",
+    age: "40代女性",
+    concern: "年齢と共に顔が変化してきた",
     result: "肩の内巻き、顎関節、顔比率を修正",
     image: "/images/before-after/case-face-04.png",
+    caseId: "case-04",
   },
   {
     age: "50代女性",
-    concern: "たるみと顔が伸びてきた",
+    concern: "たるみと顔が伸びた気がする",
     result: "ストレートネック、顎関節、顔比率の修正",
     image: "/images/before-after/case-face-05.png",
+    caseId: "case-05",
   },
 ];
 
@@ -84,9 +90,10 @@ export default function BeforeAfterSection() {
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           {cases.map((c, i) => (
-            <div
+            <Link
               key={i}
-              className="flex-shrink-0 w-[80vw] md:w-[420px] snap-center rounded-2xl overflow-hidden bg-warm-white border border-greige/20 shadow-sm"
+              href={`/cases#${c.caseId}`}
+              className="flex-shrink-0 w-[80vw] md:w-[420px] snap-center rounded-2xl overflow-hidden bg-warm-white border border-greige/20 shadow-sm hover:shadow-md transition-shadow"
             >
               {/* Before / After 画像 */}
               <div className="relative aspect-[4/3] bg-greige/10">
@@ -104,7 +111,7 @@ export default function BeforeAfterSection() {
                 <p className="mt-1 font-serif text-sm tracking-wider text-charcoal">{c.concern}</p>
                 <p className="mt-2 text-xs text-charcoal-light leading-relaxed">{c.result}</p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
