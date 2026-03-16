@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import SectionHeading from "./SectionHeading";
 import ScrollReveal from "./ScrollReveal";
@@ -18,38 +19,37 @@ const concerns = [
 
 const faceCases = [
   {
-    image: "/images/before-after/case-face-01.png",
-    age: "10代女性",
-    complaint: "顔の左右差・丸顔が気になる",
-    approach: "肩の歪み、顎関節、フェイスラインの修正",
-  },
-  {
     image: "/images/before-after/case-face-02.png",
     age: "20代女性",
     complaint: "出産を機に顔が変わってきた",
     approach: "顔の歪み、顔の立体感を修正",
+    caseId: "case-01",
   },
   {
     image: "/images/before-after/case-face-03.png",
     age: "30代女性",
     complaint: "むくまない顔にしたい",
     approach: "顎関節、上部頸椎、蝶形骨を修正",
+    caseId: "case-03",
   },
   {
     image: "/images/before-after/case-face-04.png",
     age: "30代女性",
     complaint: "年齢と共に顔が変わってきた",
     approach: "肩の内巻き、顎関節、顔比率を修正",
+    caseId: "case-04",
   },
   {
     image: "/images/before-after/case-face-05.png",
     age: "50代女性",
     complaint: "たるみと顔が伸びてきた",
     approach: "ストレートネック、顎関節、顔比率の修正",
+    caseId: "case-05",
   },
 ];
 
 export default function ConcernSection() {
+  const router = useRouter();
   const [currentCase, setCurrentCase] = useState(0);
 
   const goTo = (index: number) => {
@@ -127,7 +127,13 @@ export default function ConcernSection() {
 
           {/* 症例カード */}
           <div className="mt-10 max-w-2xl mx-auto">
-            <div className="rounded-2xl overflow-hidden border border-gold/20 bg-warm-white">
+            <div
+              role="link"
+              tabIndex={0}
+              onClick={() => router.push(`/case#${faceCases[currentCase].caseId}`)}
+              onKeyDown={(e) => { if (e.key === "Enter") router.push(`/case#${faceCases[currentCase].caseId}`); }}
+              className="rounded-2xl overflow-hidden border border-gold/20 bg-warm-white cursor-pointer hover:shadow-lg transition-shadow"
+            >
               <div className="flex flex-col sm:flex-row">
                 {/* 左: 症例画像 */}
                 <div className="relative w-full sm:w-1/2 aspect-[4/5] sm:aspect-auto sm:min-h-[320px]">
@@ -158,6 +164,9 @@ export default function ConcernSection() {
                     </span>
                     {faceCases[currentCase].approach}
                   </p>
+                  <span className="text-[10px] text-gold tracking-wider mt-3 inline-block">
+                    詳しく見る →
+                  </span>
                 </div>
               </div>
             </div>

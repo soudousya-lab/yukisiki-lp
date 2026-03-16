@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState, useEffect, useCallback } from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import ScrollReveal from "./ScrollReveal";
 import { FiChevronRight } from "react-icons/fi";
@@ -47,6 +48,7 @@ const cases = [
 const SCROLL_THRESHOLD = 8;
 
 export default function BeforeAfterSection() {
+  const router = useRouter();
   const scrollRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   // スクロールとタップを判別するためのポインタ位置記録
@@ -79,16 +81,9 @@ export default function BeforeAfterSection() {
     pointerStart.current = { x: e.clientX, y: e.clientY };
   };
 
-  const scrollToCase = useCallback((caseId: string) => {
-    // URLハッシュを更新（yukisiki.com/#case-01 形式）
-    window.history.pushState(null, "", `#${caseId}`);
-    const el = document.getElementById(caseId);
-    if (el) {
-      const headerOffset = 72;
-      const top = el.getBoundingClientRect().top + window.scrollY - headerOffset;
-      window.scrollTo({ top, behavior: "smooth" });
-    }
-  }, []);
+  const navigateToCase = useCallback((caseId: string) => {
+    router.push(`/case#${caseId}`);
+  }, [router]);
 
   const handleCardClick = (caseId: string, e: React.MouseEvent) => {
     // スクロール操作だった場合はナビゲーションしない
@@ -101,7 +96,7 @@ export default function BeforeAfterSection() {
       }
     }
     pointerStart.current = null;
-    scrollToCase(caseId);
+    navigateToCase(caseId);
   };
 
   return (
@@ -130,7 +125,7 @@ export default function BeforeAfterSection() {
               tabIndex={0}
               onPointerDown={handlePointerDown}
               onClick={(e) => handleCardClick(c.caseId, e)}
-              onKeyDown={(e) => { if (e.key === "Enter") scrollToCase(c.caseId); }}
+              onKeyDown={(e) => { if (e.key === "Enter") navigateToCase(c.caseId); }}
               className="flex-shrink-0 w-[80vw] md:w-[420px] snap-center rounded-2xl overflow-hidden bg-warm-white border border-greige/20 shadow-sm hover:shadow-md transition-shadow cursor-pointer"
             >
               {/* Before / After 画像 */}

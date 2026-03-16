@@ -5,7 +5,6 @@ import ConcernSection from "@/components/ConcernSection";
 import DifferenceSection from "@/components/DifferenceSection";
 import ResultsSection from "@/components/ResultsSection";
 import BeforeAfterSection from "@/components/BeforeAfterSection";
-import CaseReportsSection from "@/components/CaseReportsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import TherapistSection from "@/components/TherapistSection";
 import FlowSection from "@/components/FlowSection";
@@ -40,8 +39,6 @@ export default function Home() {
         <GradientDivider from="var(--color-charcoal)" to="var(--color-warm-white)" />
         <PriceSection />
         <AccessSection />
-        <GradientDivider from="var(--color-ivory)" to="var(--color-ivory)" />
-        <CaseReportsSection />
         <GradientDivider from="var(--color-ivory)" to="var(--color-charcoal)" />
         <ReserveSection />
       </main>
