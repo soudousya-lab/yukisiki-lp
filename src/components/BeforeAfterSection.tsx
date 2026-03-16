@@ -1,9 +1,10 @@
 "use client";
 
 import { useRef, useState, useEffect, useCallback } from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
-import Link from "next/link";
 import ScrollReveal from "./ScrollReveal";
+import { FiChevronRight } from "react-icons/fi";
 
 const cases = [
   {
@@ -43,9 +44,15 @@ const cases = [
   },
 ];
 
+// スクロール操作とタップを区別するための閾値（px）
+const SCROLL_THRESHOLD = 8;
+
 export default function BeforeAfterSection() {
+  const router = useRouter();
   const scrollRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  // スクロールとタップを判別するためのポインタ位置記録
+  const pointerStart = useRef<{ x: number; y: number } | null>(null);
 
   const handleScroll = useCallback(() => {
     const el = scrollRef.current;
@@ -70,6 +77,24 @@ export default function BeforeAfterSection() {
     el.scrollTo({ left: cardWidth * index, behavior: "smooth" });
   };
 
+  const handlePointerDown = (e: React.PointerEvent) => {
+    pointerStart.current = { x: e.clientX, y: e.clientY };
+  };
+
+  const handleCardClick = (caseId: string, e: React.MouseEvent) => {
+    // スクロール操作だった場合はナビゲーションしない
+    if (pointerStart.current) {
+      const dx = Math.abs(e.clientX - pointerStart.current.x);
+      const dy = Math.abs(e.clientY - pointerStart.current.y);
+      if (dx > SCROLL_THRESHOLD || dy > SCROLL_THRESHOLD) {
+        pointerStart.current = null;
+        return;
+      }
+    }
+    pointerStart.current = null;
+    router.push(`/cases#${caseId}`);
+  };
+
   return (
     <section className="py-16 md:py-20 bg-ivory overflow-hidden">
       <div className="max-w-5xl mx-auto px-6">
@@ -90,10 +115,14 @@ export default function BeforeAfterSection() {
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           {cases.map((c, i) => (
-            <Link
+            <div
               key={i}
-              href={`/cases#${c.caseId}`}
-              className="flex-shrink-0 w-[80vw] md:w-[420px] snap-center rounded-2xl overflow-hidden bg-warm-white border border-greige/20 shadow-sm hover:shadow-md transition-shadow"
+              role="link"
+              tabIndex={0}
+              onPointerDown={handlePointerDown}
+              onClick={(e) => handleCardClick(c.caseId, e)}
+              onKeyDown={(e) => { if (e.key === "Enter") router.push(`/cases#${c.caseId}`); }}
+              className="flex-shrink-0 w-[80vw] md:w-[420px] snap-center rounded-2xl overflow-hidden bg-warm-white border border-greige/20 shadow-sm hover:shadow-md transition-shadow cursor-pointer"
             >
               {/* Before / After 画像 */}
               <div className="relative aspect-[4/3] bg-greige/10">
@@ -101,17 +130,21 @@ export default function BeforeAfterSection() {
                   src={c.image}
                   alt={`${c.age} ${c.concern} Before/After`}
                   fill
-                  className="object-cover"
+                  className="object-cover pointer-events-none"
                   sizes="(max-width: 768px) 80vw, 420px"
+                  draggable={false}
                 />
               </div>
               {/* Info */}
-              <div className="p-5">
-                <span className="text-[10px] text-gold tracking-wider">{c.age}</span>
-                <p className="mt-1 font-serif text-sm tracking-wider text-charcoal">{c.concern}</p>
-                <p className="mt-2 text-xs text-charcoal-light leading-relaxed">{c.result}</p>
+              <div className="p-5 flex items-end justify-between">
+                <div>
+                  <span className="text-[10px] text-gold tracking-wider">{c.age}</span>
+                  <p className="mt-1 font-serif text-sm tracking-wider text-charcoal">{c.concern}</p>
+                  <p className="mt-2 text-xs text-charcoal-light leading-relaxed">{c.result}</p>
+                </div>
+                <FiChevronRight className="w-4 h-4 text-gold flex-shrink-0 ml-2" />
               </div>
-            </Link>
+            </div>
           ))}
         </div>
 
