@@ -11,11 +11,15 @@ import FloatingParticles from "./FloatingParticles";
 const faceCauses = [
   { label: "片方噛み", desc: "片側だけで噛む癖が顎関節に左右差を生む" },
   { label: "歯ぎしり", desc: "就寝中の歯ぎしりが顎周りの骨格に負担をかける" },
+  { label: "頬杖", desc: "片側に持続的な圧力がかかり顔の左右差を生む" },
+  { label: "片方で寝る", desc: "横向き・うつ伏せで片側に体重がかかり顔が歪む" },
 ];
 
 const bodyCauses = [
   { label: "猫背", desc: "首が前に出ることで顎関節と首の骨の連動に不具合が起こる" },
   { label: "姿勢の崩れ", desc: "身体全体のバランスが崩れ顔の歪みに影響する" },
+  { label: "ストレートネック", desc: "首の自然なカーブが失われ顎関節への負担が増大する" },
+  { label: "片方重心", desc: "片足に体重をかける癖が骨盤から顔まで歪みを連鎖させる" },
 ];
 
 const habits = [
