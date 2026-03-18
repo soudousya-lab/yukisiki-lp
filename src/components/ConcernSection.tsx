@@ -83,7 +83,7 @@ export default function ConcernSection() {
           </p>
         </ScrollReveal>
 
-        {/* 顔解説セクション */}
+        {/* 症例解説セクション */}
         <ScrollReveal animation="fade-up" delay={400}>
           {/* 矢印 */}
           <div className="mt-14 flex justify-center">
@@ -109,13 +109,13 @@ export default function ConcernSection() {
             </svg>
           </div>
 
-          {/* 顔解説タイトル */}
+          {/* 症例解説タイトル */}
           <div className="mt-8 text-center">
             <p className="text-[10px] md:text-xs tracking-[0.25em] text-gold-light uppercase mb-3">
-              Face Analysis
+              Case Analysis
             </p>
             <h3 className="font-serif text-xl md:text-2xl tracking-wider text-warm-white mb-3">
-              顔解説
+              症例解説
             </h3>
             <div className="w-8 h-[2px] bg-gold mx-auto mb-6" />
             <p className="text-xs md:text-sm text-greige-dark leading-relaxed tracking-wide max-w-md mx-auto">

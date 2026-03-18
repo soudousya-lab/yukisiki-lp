@@ -313,7 +313,7 @@ export default function CaseContent() {
                     </h2>
 
                     <p className="text-[11px] md:text-xs text-gold tracking-wider mb-3">
-                      顔解説と施術ポイント
+                      症例解説と施術ポイント
                     </p>
 
                     {c.sections.map((s, si) => (
