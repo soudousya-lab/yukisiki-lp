@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { FiArrowLeft, FiPhone, FiCalendar } from "react-icons/fi";
 import SectionHeading from "./SectionHeading";
@@ -18,12 +19,14 @@ const bodyCauses = [
 ];
 
 const habits = [
-  { title: "頬杖をつく", desc: "片側に圧力がかかり左右差を生む" },
-  { title: "うつ伏せ寝", desc: "顔に一方向の圧力が長時間かかる" },
-  { title: "片方噛み", desc: "筋肉と関節のバランスが崩れる" },
-  { title: "歯ぎしり・食いしばり", desc: "顎関節に過度な負担がかかる" },
-  { title: "脚を組む", desc: "身体の歪みが顔に伝わる" },
-  { title: "スマホの長時間使用", desc: "首が前に出て姿勢が崩れる" },
+  { title: "うつぶせ寝", desc: "顔に一方向の圧力が長時間かかる", image: "/images/yugami/うつぶせ寝_0.png" },
+  { title: "テレビ・スマホ姿勢", desc: "首が前に出て姿勢が崩れる", image: "/images/yugami/スマホテレビ姿勢_0.png" },
+  { title: "長時間スマホ", desc: "下を向き続けることで首・顎に負担がかかる", image: "/images/yugami/スマホ長時間使用_0.png" },
+  { title: "脚を組む", desc: "身体の歪みが顔に伝わる", image: "/images/yugami/脚を組む_0.png" },
+  { title: "歯ぎしり", desc: "顎関節に過度な負担がかかる", image: "/images/yugami/歯ぎしり_0.png" },
+  { title: "片方噛み", desc: "筋肉と関節のバランスが崩れる", image: "/images/yugami/片方かみ_0.png" },
+  { title: "バッグを片方で持つ", desc: "左右の筋肉バランスが崩れ歪みに繋がる", image: "/images/yugami/片方でバックを持つ_0.png" },
+  { title: "頬杖をつく", desc: "片側に圧力がかかり左右差を生む", image: "/images/yugami/頬杖_0.png" },
 ];
 
 export default function YugamiContent() {
@@ -223,21 +226,29 @@ export default function YugamiContent() {
           <div className="max-w-4xl mx-auto px-6">
             <SectionHeading en="Bad Habits" ja="歪みを作る習慣" />
 
-            <ScrollReveal className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6" stagger={120}>
+            <ScrollReveal className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6" stagger={120}>
               {habits.map((h) => (
                 <div
                   key={h.title}
-                  className="rounded-2xl p-5 md:p-6 glass-card luxury-hover text-center"
+                  className="rounded-2xl overflow-hidden glass-card luxury-hover text-center"
                 >
-                  <div className="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-3">
-                    <span className="text-gold text-lg">!</span>
+                  <div className="relative aspect-square w-full">
+                    <Image
+                      src={h.image}
+                      alt={h.title}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 50vw, 25vw"
+                    />
                   </div>
-                  <h4 className="font-serif text-sm tracking-wider text-charcoal mb-2">
-                    {h.title}
-                  </h4>
-                  <p className="text-[11px] text-charcoal-light leading-relaxed tracking-wide">
-                    {h.desc}
-                  </p>
+                  <div className="p-4 md:p-5">
+                    <h4 className="font-serif text-sm tracking-wider text-charcoal mb-2">
+                      {h.title}
+                    </h4>
+                    <p className="text-[11px] text-charcoal-light leading-relaxed tracking-wide">
+                      {h.desc}
+                    </p>
+                  </div>
                 </div>
               ))}
             </ScrollReveal>
