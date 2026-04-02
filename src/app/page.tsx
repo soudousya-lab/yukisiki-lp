@@ -15,6 +15,7 @@ import ReserveSection from "@/components/ReserveSection";
 import Footer from "@/components/Footer";
 import FloatingCTA from "@/components/FloatingCTA";
 import GradientDivider from "@/components/GradientDivider";
+import ScrollDepthTracker from "@/components/ScrollDepthTracker";
 
 export default function Home() {
   return (
@@ -44,6 +45,7 @@ export default function Home() {
       </main>
       <Footer />
       <FloatingCTA />
+      <ScrollDepthTracker />
     </>
   );
 }

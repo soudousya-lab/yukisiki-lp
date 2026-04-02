@@ -3,6 +3,7 @@
 import { FiPhone, FiCalendar } from "react-icons/fi";
 import ScrollReveal from "./ScrollReveal";
 import ShimmerText from "./ShimmerText";
+import { trackCTAClick } from "@/lib/gtag";
 
 export default function ReserveSection() {
   return (
@@ -20,11 +21,20 @@ export default function ReserveSection() {
         </ScrollReveal>
 
         <ScrollReveal animation="fade-up" delay={200} className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6" stagger={150}>
-          <a href="tel:08063202573" className="flex items-center gap-3 border-2 border-gold/40 text-gold-light rounded-full px-8 py-4 hover:bg-gold/10 transition-colors w-full sm:w-auto justify-center">
+          <a
+            href="tel:08063202573"
+            onClick={() => trackCTAClick("phone", "reserve_section")}
+            className="flex items-center gap-3 border-2 border-gold/40 text-gold-light rounded-full px-8 py-4 hover:bg-gold/10 transition-colors w-full sm:w-auto justify-center"
+          >
             <FiPhone className="w-5 h-5" /><span className="tracking-wider">080-6320-2573</span>
           </a>
-          <a href="http://b.hpr.jp/kr/hp/H000770985" target="_blank" rel="noopener noreferrer"
-            className="flex items-center gap-3 bg-gold text-white rounded-full px-8 py-4 hover:bg-gold-dark transition-colors cta-pulse cta-shine w-full sm:w-auto justify-center">
+          <a
+            href="http://b.hpr.jp/kr/hp/H000770985?utm_source=yukisiki&utm_medium=website&utm_campaign=lp_booking"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => trackCTAClick("web_booking", "reserve_section")}
+            className="flex items-center gap-3 bg-gold text-white rounded-full px-8 py-4 hover:bg-gold-dark transition-colors cta-pulse cta-shine w-full sm:w-auto justify-center"
+          >
             <FiCalendar className="w-5 h-5" /><span className="tracking-wider">Web予約はこちら</span>
           </a>
         </ScrollReveal>

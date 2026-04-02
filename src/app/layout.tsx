@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
+import MicrosoftClarity from "@/components/MicrosoftClarity";
 import "./globals.css";
 
 const siteUrl = "https://yukisiki.com";
@@ -39,7 +41,11 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="font-sans antialiased">{children}</body>
+      <body className="font-sans antialiased">
+        <GoogleAnalytics />
+        <MicrosoftClarity />
+        {children}
+      </body>
     </html>
   );
 }

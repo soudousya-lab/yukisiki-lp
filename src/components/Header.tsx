@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { FiPhone, FiMenu, FiX } from "react-icons/fi";
+import { trackCTAClick } from "@/lib/gtag";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -46,10 +47,18 @@ export default function Header() {
           ))}
         </nav>
         <div className="flex items-center gap-3">
-          <a href="tel:08063202573" className="hidden md:flex items-center gap-2 text-sm text-gold border border-gold/30 rounded-full px-4 py-2 hover:bg-gold/5 transition-colors">
+          <a
+            href="tel:08063202573"
+            onClick={() => trackCTAClick("phone", "header")}
+            className="hidden md:flex items-center gap-2 text-sm text-gold border border-gold/30 rounded-full px-4 py-2 hover:bg-gold/5 transition-colors"
+          >
             <FiPhone className="w-3.5 h-3.5" />080-6320-2573
           </a>
-          <a href="#reserve" className="hidden md:inline-block bg-gold text-white text-xs tracking-wider px-6 py-2.5 rounded-full hover:bg-gold-dark hover:scale-[1.03] transition-all cta-shine">
+          <a
+            href="#reserve"
+            onClick={() => trackCTAClick("web_booking", "header")}
+            className="hidden md:inline-block bg-gold text-white text-xs tracking-wider px-6 py-2.5 rounded-full hover:bg-gold-dark hover:scale-[1.03] transition-all cta-shine"
+          >
             ご予約はこちら
           </a>
           <button className="lg:hidden text-charcoal p-2" onClick={() => setMenuOpen(!menuOpen)} aria-label="メニュー">
@@ -68,10 +77,20 @@ export default function Header() {
           {links.map((l) => (
             <a key={l.href} href={l.href} onClick={() => setMenuOpen(false)} className="text-sm tracking-wider text-charcoal-light hover:text-gold transition-colors">{l.label}</a>
           ))}
-          <a href="tel:08063202573" className="flex items-center gap-2 text-sm text-gold">
+          <a
+            href="tel:08063202573"
+            onClick={() => trackCTAClick("phone", "header_mobile")}
+            className="flex items-center gap-2 text-sm text-gold"
+          >
             <FiPhone className="w-4 h-4" />080-6320-2573
           </a>
-          <a href="#reserve" onClick={() => setMenuOpen(false)} className="bg-gold text-white text-sm tracking-wider px-8 py-3 rounded-full">ご予約はこちら</a>
+          <a
+            href="#reserve"
+            onClick={() => { trackCTAClick("web_booking", "header_mobile"); setMenuOpen(false); }}
+            className="bg-gold text-white text-sm tracking-wider px-8 py-3 rounded-full"
+          >
+            ご予約はこちら
+          </a>
         </nav>
       </div>
     </header>

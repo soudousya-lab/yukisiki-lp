@@ -1,14 +1,24 @@
+"use client";
+
 import { FiCalendar } from "react-icons/fi";
+import { trackCTAClick } from "@/lib/gtag";
 
 interface Props {
   className?: string;
   large?: boolean;
+  /** トラッキング用の配置場所（デフォルト: "cta_button"） */
+  location?: string;
 }
 
-export default function CTAButton({ className = "", large }: Props) {
+export default function CTAButton({ className = "", large, location = "cta_button" }: Props) {
+  const handleClick = () => {
+    trackCTAClick("web_booking", location);
+  };
+
   return (
     <a
       href="#reserve"
+      onClick={handleClick}
       className={`inline-flex items-center justify-center gap-2 bg-gold text-white tracking-wider rounded-full hover:bg-gold-dark hover:scale-[1.03] transition-all cta-pulse cta-shine ${
         large
           ? "text-sm md:text-base px-10 py-4 md:px-14 md:py-5"

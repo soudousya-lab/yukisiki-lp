@@ -4,6 +4,7 @@ import { useState } from "react";
 import { FiChevronRight, FiCheck, FiCalendar } from "react-icons/fi";
 import SectionHeading from "./SectionHeading";
 import ScrollReveal from "./ScrollReveal";
+import { trackCTAClick, trackMenuSelection } from "@/lib/gtag";
 
 /* ─── お悩みカテゴリ ─── */
 const concerns = [
@@ -159,6 +160,12 @@ const menuMap: Record<ConcernId, Menu[]> = {
   ],
 };
 
+/** ホットペッパーURLにUTMパラメータを付与する */
+const appendUTM = (url: string): string => {
+  const separator = url.includes("?") ? "&" : "?";
+  return `${url}${separator}utm_source=yukisiki&utm_medium=website&utm_campaign=lp_booking`;
+};
+
 /* ─── コンポーネント ─── */
 export default function SimulationSection() {
   const [selected, setSelected] = useState<ConcernId | null>(null);
@@ -167,6 +174,11 @@ export default function SimulationSection() {
   const handleSelect = (id: ConcernId) => {
     setSelected(id);
     setShowResult(false);
+    // メニュー選択をトラッキング
+    const concern = concerns.find((c) => c.id === id);
+    if (concern) {
+      trackMenuSelection(id, concern.label);
+    }
     // 少し待ってから結果表示（アニメーション用）
     setTimeout(() => setShowResult(true), 100);
   };
@@ -288,9 +300,10 @@ export default function SimulationSection() {
                     {/* 予約ボタン */}
                     <div className="px-6 pb-5 pt-2">
                       <a
-                        href={menu.bookingUrl}
+                        href={appendUTM(menu.bookingUrl)}
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={() => trackCTAClick("hotpepper", `simulation_${selected}`)}
                         className="flex items-center justify-center gap-2 w-full bg-gold text-white rounded-full py-3 text-xs tracking-wider hover:bg-gold-dark transition-colors cta-shine"
                       >
                         <FiCalendar className="w-3.5 h-3.5" />
