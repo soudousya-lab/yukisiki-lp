@@ -15,10 +15,12 @@ export default function GoogleAnalytics() {
       />
       <Script id="google-analytics" strategy="afterInteractive">
         {`
-          window.dataLayer = window.dataLayer || [];
-          window.gtag = function gtag(){window.dataLayer.push(arguments);}
-          window.gtag('js', new Date());
-          window.gtag('config', '${GA_ID}');
+          (function(w,d,id){
+            w.dataLayer = w.dataLayer || [];
+            w.gtag = function(){w.dataLayer.push(arguments);};
+            w.gtag('js', new Date());
+            w.gtag('config', id);
+          })(window, document, '${GA_ID}');
         `}
       </Script>
     </>
