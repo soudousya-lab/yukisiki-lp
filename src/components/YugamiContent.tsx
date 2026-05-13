@@ -259,6 +259,47 @@ export default function YugamiContent() {
           </div>
         </section>
 
+        {/* Bad Habits 詳細記事リンク */}
+        <section className="py-20 md:py-24 bg-ivory">
+          <div className="max-w-3xl mx-auto px-6">
+            <ScrollReveal animation="fade-up">
+              <p className="text-center text-[10px] md:text-xs tracking-[0.3em] text-gold uppercase mb-3">
+                Want to know more
+              </p>
+              <h2 className="font-serif text-center text-lg md:text-xl lg:text-2xl tracking-wider text-charcoal leading-relaxed mb-12">
+                各習慣がどう骨格に作用するのか、
+                <br />
+                医学的な詳細を解説しています
+              </h2>
+            </ScrollReveal>
+
+            <ScrollReveal animation="fade-up" delay={150}>
+              <a
+                href="/yugami/blog/causes/8-habits-cause-face-distortion"
+                className="group block rounded-2xl glass-card border border-gold/20 p-8 md:p-10 hover:border-gold/50 hover:-translate-y-0.5 transition-all"
+              >
+                <p className="text-[10px] tracking-[0.3em] text-gold uppercase mb-3">
+                  No. 01 — Causes
+                </p>
+                <h3 className="font-serif text-base md:text-lg lg:text-xl text-charcoal leading-snug tracking-wider mb-4 group-hover:text-gold transition-colors">
+                  顔の歪みの本当の原因——日常の8つの癖が顔を曲げていく医学的メカニズム
+                </h3>
+                <p className="text-sm text-charcoal-light leading-loose tracking-wide mb-6">
+                  片噛み、頬杖、うつ伏せ寝。臨床現場で見てきた「顔を歪ませる8つの癖」を解剖学とウォルフの法則に基づいて解説。骨はなぜ動くのか、どう連鎖するのか——。
+                </p>
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 pt-5 border-t border-gold/10">
+                  <span className="text-[11px] text-warm-gray tracking-wider">
+                    Reading time — 約10分
+                  </span>
+                  <span className="text-xs tracking-[0.2em] text-gold uppercase group-hover:translate-x-2 transition-transform">
+                    Read this article →
+                  </span>
+                </div>
+              </a>
+            </ScrollReveal>
+          </div>
+        </section>
+
         {/* なぜ顔の歪み矯正は少ないのか */}
         <section className="py-20 md:py-28 bg-warm-white">
           <div className="max-w-4xl mx-auto px-6">
@@ -340,6 +381,74 @@ export default function YugamiContent() {
                 </p>
               </div>
             </ScrollReveal>
+          </div>
+        </section>
+
+        {/* Journal — 専門解説記事3本 */}
+        <section className="py-20 md:py-28 bg-charcoal text-warm-white">
+          <div className="max-w-5xl mx-auto px-6">
+            <ScrollReveal animation="fade-up">
+              <p className="text-center text-[10px] md:text-xs tracking-[0.3em] text-gold-light uppercase mb-3">
+                Journal
+              </p>
+              <h2 className="font-serif text-center text-xl md:text-2xl lg:text-3xl tracking-wider text-warm-white mb-4">
+                顔の歪みの専門解説
+              </h2>
+              <div className="gold-line-wide mx-auto mb-6" />
+              <p className="text-center text-sm md:text-base text-greige-dark leading-loose tracking-wide max-w-xl mx-auto mb-14">
+                解剖学に基づいた顔の歪みの専門記事を、
+                <br className="hidden md:block" />
+                毎週金曜に更新しています。
+              </p>
+            </ScrollReveal>
+
+            <ScrollReveal className="grid md:grid-cols-3 gap-5 md:gap-6 mb-10" stagger={150}>
+              {[
+                {
+                  num: "No. 05 — Symptoms",
+                  title: "片側だけ頬骨が出る・エラが張る本当の理由",
+                  href: "/yugami/blog/symptoms/cheekbone-jaw-asymmetry",
+                },
+                {
+                  num: "No. 04 — Symptoms",
+                  title: "顔の左右差はなぜ起こるのか——骨格の連動から読み解く",
+                  href: "/yugami/blog/symptoms/facial-asymmetry",
+                },
+                {
+                  num: "No. 03 — Symptoms",
+                  title: "顎の歪み・左右のズレの医学的原因——上部頸椎と顎関節の連動から読み解く",
+                  href: "/yugami/blog/symptoms/jaw-distortion",
+                },
+              ].map((article) => (
+                <a
+                  key={article.href}
+                  href={article.href}
+                  className="group block rounded-2xl p-7 glass-card-dark border border-gold/15 hover:border-gold/45 hover:-translate-y-0.5 transition-all"
+                >
+                  <p className="text-[10px] tracking-[0.25em] text-gold-light uppercase mb-3">
+                    {article.num}
+                  </p>
+                  <h3 className="font-serif text-sm md:text-base text-warm-white leading-relaxed tracking-wider mb-4 group-hover:text-gold-light transition-colors min-h-[3.5rem]">
+                    {article.title}
+                  </h3>
+                  <span className="text-[11px] tracking-[0.2em] text-gold uppercase group-hover:translate-x-1.5 inline-block transition-transform">
+                    Read more →
+                  </span>
+                </a>
+              ))}
+            </ScrollReveal>
+
+            {/* 記事数が10本を超えたら下記の View all を有効化 */}
+            {/*
+            <div className="flex justify-center">
+              <a
+                href="/yugami/blog"
+                className="text-xs tracking-[0.25em] text-gold uppercase border border-gold/40 px-7 py-3 hover:bg-gold hover:text-charcoal transition-colors"
+              >
+                View all entries →
+              </a>
+            </div>
+            */}
           </div>
         </section>
 
