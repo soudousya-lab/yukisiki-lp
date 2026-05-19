@@ -33,7 +33,7 @@
     "name": "YUKISIKI 中目黒",
     "url": "https://yukisiki.com"
   },
-  "datePublished": "2026-05-13",
+  "datePublished": "2026-05-XX",
   "inLanguage": "ja"
 }
 </script>
@@ -45,19 +45,20 @@
 <style>
 
 :root {
-  --bg-base: #0a0908;
-  --bg-elevated: #131210;
-  --bg-card: #1a1815;
-  --bg-card-soft: #211e1a;
-  --ink: #f0e8d8;
-  --ink-soft: #c8bfae;
-  --ink-meta: #8a8073;
-  --gold: #c9a96e;
-  --gold-soft: #d8bf8e;
-  --gold-deep: #a08654;
-  --gold-line: #5a4a32;
-  --line: #2a2520;
-  --line-soft: #1f1c18;
+  /* 白基調・読みやすさ優先のメディアサイト風 */
+  --bg-base: #fdfcf9;          /* ほぼ白だが、ややクリーム寄り(目に優しい) */
+  --bg-elevated: #f7f4ed;       /* セクション切り替え用の少し濃いクリーム */
+  --bg-card: #f4efe4;           /* カード背景(habit囲み等) */
+  --bg-card-soft: #faf7f0;      /* より柔らかい背景 */
+  --ink: #1a1612;               /* メイン文字: ほぼ黒、ややブラウン寄り */
+  --ink-soft: #3a342d;          /* 本文: 純黒ではなく柔らかい黒 */
+  --ink-meta: #7a6f60;          /* メタ情報の文字 */
+  --gold: #a08654;              /* ゴールド(既存LPと統一) */
+  --gold-soft: #c9a96e;         /* 柔らかいゴールド */
+  --gold-deep: #7a6440;         /* 深いゴールド */
+  --gold-line: #d4c4a8;         /* ゴールドの罫線 */
+  --line: #d8d0c0;              /* 主要な罫線 */
+  --line-soft: #e8e2d0;         /* 柔らかい罫線 */
   
   --serif-en: 'Cormorant Garamond', serif;
   --serif-jp: 'Shippori Mincho', serif;
@@ -273,7 +274,7 @@ body::before {
 .article-body strong {
   color: var(--ink);
   font-weight: 700;
-  background: linear-gradient(transparent 65%, rgba(201, 169, 110, 0.22) 65%);
+  background: linear-gradient(transparent 65%, rgba(201, 169, 110, 0.35) 65%);
   padding: 0 2px;
 }
 
@@ -381,7 +382,7 @@ body::before {
 .botox-note {
   margin-top: 32px;
   padding: 24px 28px;
-  background: rgba(201, 169, 110, 0.06);
+  background: rgba(201, 169, 110, 0.12);
   border: 1px solid var(--gold-line);
   font-size: 15px;
   line-height: 1.95;
@@ -468,7 +469,7 @@ body::before {
   margin: 0;
 }
 .ranking-reason strong {
-  background: linear-gradient(transparent 65%, rgba(201, 169, 110, 0.22) 65%);
+  background: linear-gradient(transparent 65%, rgba(201, 169, 110, 0.35) 65%);
 }
 @media (max-width: 600px) {
   .ranking-item {
@@ -790,6 +791,245 @@ body::before {
   .lead { font-size: 17px !important; }
   .author-quote { padding: 36px 24px; font-size: 19px; }
   .video-placeholder { padding: 40px 24px; }
+}
+
+
+
+/* ===== 白背景化に伴う追加調整 ===== */
+
+/* body のテクスチャ（紙感）を白基調用に強化 */
+body::before {
+  opacity: 0.04 !important;
+}
+
+/* habit カードの境界を白背景でも分かりやすく */
+.habit {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--gold) !important;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+
+/* habit内のh4のゴールド色を、白背景でも読めるように深めに */
+.habit h4 {
+  color: var(--gold-deep) !important;
+}
+
+/* ボトックスノート（NOTE枠）の縁取り */
+.botox-note {
+  border: 1px solid var(--gold-line);
+  background: var(--bg-elevated);
+}
+
+/* 引用ブロック（先生の言葉） */
+.author-quote {
+  background: var(--bg-elevated);
+  border-top: 1px solid var(--gold-line);
+  border-bottom: 1px solid var(--gold-line);
+}
+
+/* ランキング項目の境界 */
+.ranking-item {
+  border-bottom: 1px solid var(--line);
+}
+.ranking-item:first-child {
+  border-top: 1px solid var(--line);
+}
+
+/* 動画プレースホルダ（記事内では白背景に黒の動画予告枠） */
+.video-placeholder {
+  background: #0e0c0a;
+  color: #e8dcc8;
+  border: none;
+}
+.video-placeholder .video-label {
+  color: var(--gold-soft);
+}
+.video-placeholder .video-text {
+  color: #f0e8d8;
+}
+
+/* 著者プロフィール枠 */
+.author-bio {
+  background: var(--bg-elevated);
+  border: 1px solid var(--line);
+}
+
+/* method-sub（YUKISIKIアプローチのサブ見出し）の色調整 */
+.method-sub {
+  color: var(--gold-deep) !important;
+}
+.method-sub-num {
+  color: var(--gold) !important;
+}
+
+/* リード文を少し強調 */
+.lead {
+  color: var(--ink) !important;
+}
+.lead-block {
+  border-bottom: 1px solid var(--line);
+}
+
+/* 章タイトル下の罫線 */
+.chapter-num::before {
+  background: var(--gold) !important;
+}
+
+/* 区切り線 */
+.divider::before, .divider::after {
+  background: var(--gold-line) !important;
+}
+
+/* ナビゲーションを白背景用に */
+.nav {
+  background: rgba(253, 252, 249, 0.92) !important;
+  border-bottom: 1px solid var(--line);
+}
+.nav-logo {
+  color: var(--ink) !important;
+}
+.nav-back {
+  color: var(--gold-deep) !important;
+}
+.nav-cta {
+  color: var(--gold-deep) !important;
+  border-color: var(--gold-deep) !important;
+}
+.nav-cta:hover {
+  background: var(--gold-deep) !important;
+  color: var(--bg-base) !important;
+}
+
+/* パンくず */
+.breadcrumb {
+  color: var(--ink-meta) !important;
+}
+.breadcrumb a {
+  color: var(--ink-meta) !important;
+}
+.breadcrumb .current {
+  color: var(--gold-deep) !important;
+}
+
+/* 記事ヘッダーの装飾 */
+.article-eyebrow {
+  color: var(--gold-deep) !important;
+}
+.article-eyebrow::after {
+  background: var(--gold-line) !important;
+}
+.article-category {
+  color: var(--gold-deep) !important;
+  border-color: var(--gold-line) !important;
+}
+.article-title {
+  color: var(--ink) !important;
+}
+.article-title-en {
+  color: var(--gold-deep) !important;
+}
+.article-meta {
+  border-top: 1px solid var(--line) !important;
+  border-bottom: 1px solid var(--line) !important;
+  color: var(--ink-meta) !important;
+}
+.article-meta strong {
+  color: var(--ink) !important;
+}
+
+/* チャプタータイトル */
+.chapter-num {
+  color: var(--gold-deep) !important;
+}
+.chapter-title {
+  color: var(--ink) !important;
+}
+
+/* habit-label（Habit i.等） */
+.habit-label {
+  color: var(--gold-deep) !important;
+}
+.habit-title {
+  color: var(--ink) !important;
+}
+
+/* ranking */
+.ranking-num {
+  color: var(--gold) !important;
+}
+.ranking-title {
+  color: var(--ink) !important;
+}
+.ranking-reason {
+  color: var(--ink-soft) !important;
+}
+
+/* author-quote */
+.author-quote {
+  color: var(--ink) !important;
+}
+.author-quote::before {
+  color: var(--gold) !important;
+}
+.author-quote-jp {
+  color: var(--gold-deep) !important;
+}
+
+/* CTAセクションは黒のまま（メリハリ・コントラスト効果） */
+/* これによって、白い記事本文を読み終わった後の予約ボタンが強く印象づけられる */
+.cta-section {
+  background: #0a0908 !important;
+}
+
+/* 関連記事セクション */
+.related-eyebrow {
+  color: var(--gold-deep) !important;
+}
+.related-eyebrow::before {
+  background: var(--gold) !important;
+}
+.related-title {
+  color: var(--ink) !important;
+}
+.related-item {
+  border-top: 1px solid var(--line) !important;
+  color: var(--ink) !important;
+}
+.related-item-num {
+  color: var(--gold-deep) !important;
+}
+.related-item-title {
+  color: var(--ink) !important;
+}
+.related-item-meta {
+  color: var(--ink-meta) !important;
+}
+
+/* フッターは黒のまま（CTAと統一） */
+.footer {
+  background: #0a0908 !important;
+  color: #e8dcc8 !important;
+}
+.footer-logo {
+  color: #f0e8d8 !important;
+}
+.footer-copy {
+  color: rgba(232, 220, 200, 0.5) !important;
+}
+
+/* プログレスバー */
+.progress-bar {
+  background: var(--gold) !important;
+}
+
+/* 本文p内のstrongのハイライト調整 */
+.article-body strong {
+  color: var(--ink) !important;
+}
+
+.article-body em {
+  color: var(--gold-deep) !important;
 }
 
 </style>
