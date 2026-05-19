@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import MicrosoftClarity from "@/components/MicrosoftClarity";
+import JsonLd from "@/components/JsonLd";
+import { localBusinessSchema, websiteSchema } from "@/lib/structuredData";
 import "./globals.css";
 
 const siteUrl = "https://yukisiki.com";
@@ -40,6 +42,9 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
+        {/* 構造化データ: LocalBusiness + WebSite（地域SEO・リッチリザルト対策） */}
+        <JsonLd data={localBusinessSchema} />
+        <JsonLd data={websiteSchema} />
       </head>
       <body className="font-sans antialiased">
         <GoogleAnalytics />
