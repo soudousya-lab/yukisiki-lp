@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import KogaoContent from "@/components/KogaoContent";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbSchema, serviceSchema } from "@/lib/structuredData";
 
 export const metadata: Metadata = {
   title: "小顔矯正とは | YUKISIKI 中目黒",
@@ -8,5 +10,23 @@ export const metadata: Metadata = {
 };
 
 export default function KogaoPage() {
-  return <KogaoContent />;
+  return (
+    <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "YUKISIKI", url: "/" },
+          { name: "小顔矯正とは", url: "/kogao" },
+        ])}
+      />
+      <JsonLd
+        data={serviceSchema({
+          name: "小顔矯正",
+          description:
+            "骨格を根本から整え、顔を本来あるべき姿に最適化する手技矯正。鍼灸国家資格保有の専門家が解剖学に基づいて施術します。",
+          url: "/kogao",
+        })}
+      />
+      <KogaoContent />
+    </>
+  );
 }

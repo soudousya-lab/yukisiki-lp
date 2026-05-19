@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import CaseContent from "@/components/CaseContent";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbSchema } from "@/lib/structuredData";
 
 export const metadata: Metadata = {
   title: "症例解説 | YUKISIKI 中目黒",
@@ -8,5 +10,15 @@ export const metadata: Metadata = {
 };
 
 export default function CasePage() {
-  return <CaseContent />;
+  return (
+    <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "YUKISIKI", url: "/" },
+          { name: "症例解説", url: "/case" },
+        ])}
+      />
+      <CaseContent />
+    </>
+  );
 }
