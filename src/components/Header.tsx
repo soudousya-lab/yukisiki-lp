@@ -28,8 +28,8 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? "bg-warm-white/95 backdrop-blur-md shadow-sm" : "bg-transparent"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-warm-white/95 backdrop-blur-md ${
+        scrolled ? "shadow-sm" : ""
       }`}
       style={{
         opacity: mounted ? 1 : 0,
@@ -38,7 +38,7 @@ export default function Header() {
       }}
     >
       <div className="max-w-6xl mx-auto px-4 flex items-center justify-between h-16 md:h-20">
-        <a href="#" className={`font-serif text-lg md:text-xl tracking-widest transition-colors duration-500 ${scrolled ? "text-gold-shimmer" : "text-charcoal"}`}>
+        <a href="#" className="font-serif text-lg md:text-xl tracking-widest text-gold-shimmer transition-colors duration-500">
           YUKISIKI
         </a>
         <nav className="hidden lg:flex items-center gap-6">
