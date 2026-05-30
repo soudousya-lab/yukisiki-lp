@@ -23,14 +23,14 @@ const bodyCauses = [
 ];
 
 const habits = [
-  { title: "うつぶせ寝", desc: "顔に一方向の圧力が長時間かかる", image: "/images/yugami/うつぶせ寝_0.png" },
-  { title: "テレビ・スマホ姿勢", desc: "首が前に出て姿勢が崩れる", image: "/images/yugami/スマホテレビ姿勢_0.png" },
-  { title: "長時間スマホ", desc: "下を向き続けることで首・顎に負担がかかる", image: "/images/yugami/スマホ長時間使用_0.png" },
-  { title: "脚を組む", desc: "身体の歪みが顔に伝わる", image: "/images/yugami/脚を組む_0.png" },
-  { title: "歯ぎしり", desc: "顎関節に過度な負担がかかる", image: "/images/yugami/歯ぎしり_0.png" },
-  { title: "片方噛み", desc: "筋肉と関節のバランスが崩れる", image: "/images/yugami/片方かみ_0.png" },
-  { title: "バッグを片方で持つ", desc: "左右の筋肉バランスが崩れ歪みに繋がる", image: "/images/yugami/片方でバックを持つ_0.png" },
-  { title: "頬杖をつく", desc: "片側に圧力がかかり左右差を生む", image: "/images/yugami/頬杖_0.png" },
+  { title: "うつぶせ寝", desc: "顔に一方向の圧力が長時間かかる", image: "/images/yugami/うつぶせ寝_0.webp" },
+  { title: "テレビ・スマホ姿勢", desc: "首が前に出て姿勢が崩れる", image: "/images/yugami/スマホテレビ姿勢_0.webp" },
+  { title: "長時間スマホ", desc: "下を向き続けることで首・顎に負担がかかる", image: "/images/yugami/スマホ長時間使用_0.webp" },
+  { title: "脚を組む", desc: "身体の歪みが顔に伝わる", image: "/images/yugami/脚を組む_0.webp" },
+  { title: "歯ぎしり", desc: "顎関節に過度な負担がかかる", image: "/images/yugami/歯ぎしり_0.webp" },
+  { title: "片方噛み", desc: "筋肉と関節のバランスが崩れる", image: "/images/yugami/片方かみ_0.webp" },
+  { title: "バッグを片方で持つ", desc: "左右の筋肉バランスが崩れ歪みに繋がる", image: "/images/yugami/片方でバックを持つ_0.webp" },
+  { title: "頬杖をつく", desc: "片側に圧力がかかり左右差を生む", image: "/images/yugami/頬杖_0.webp" },
 ];
 
 export default function YugamiContent() {

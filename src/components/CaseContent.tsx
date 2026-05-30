@@ -13,8 +13,8 @@ const cases = [
     age: "20代女性",
     title: "出産を機に顔が変わってきた",
     approach: "首肩の歪み、顎関節、フェイスラインを修正",
-    beforeAfterImage: "/images/before-after/case-face-02.png",
-    analysisImage: "/images/before-after/01_0.png",
+    beforeAfterImage: "/images/before-after/case-face-02.webp",
+    analysisImage: "/images/before-after/01_0.webp",
     sections: [
       {
         heading: "片手抱っこによる首肩の歪み",
@@ -33,8 +33,8 @@ const cases = [
     age: "20代女性",
     title: "とにかく小顔になりたい",
     approach: "ストレートネック、顎関節、顔比率を修正",
-    beforeAfterImage: "/images/before-after/20代女性02.png",
-    analysisImage: "/images/before-after/02_0.png",
+    beforeAfterImage: "/images/before-after/20代女性02.webp",
+    analysisImage: "/images/before-after/02_0.webp",
     sections: [
       {
         heading: "ストレートネックによる顎の前突",
@@ -53,8 +53,8 @@ const cases = [
     age: "30代女性",
     title: "顔の歪み、むくまない顔にしたい",
     approach: "顎関節、上部頸椎、蝶形骨を修正",
-    beforeAfterImage: "/images/before-after/case-face-03.png",
-    analysisImage: "/images/before-after/03_0.png",
+    beforeAfterImage: "/images/before-after/case-face-03.webp",
+    analysisImage: "/images/before-after/03_0.webp",
     sections: [
       {
         heading: "肩の高さと頭の側屈による顎の歪み、慢性的なむくみ",
@@ -73,8 +73,8 @@ const cases = [
     age: "40代女性",
     title: "年齢と共に顔が変化してきた",
     approach: "肩の内巻き、顎関節、顔比率を修正",
-    beforeAfterImage: "/images/before-after/case-face-04.png",
-    analysisImage: "/images/before-after/04_0.png",
+    beforeAfterImage: "/images/before-after/case-face-04.webp",
+    analysisImage: "/images/before-after/04_0.webp",
     sections: [
       {
         heading: "肩の高さ、内巻きによる顔の回旋と歪み",
@@ -93,8 +93,8 @@ const cases = [
     age: "50代女性",
     title: "たるみと顔が伸びた気がする",
     approach: "ストレートネック、顎関節、顔比率の修正",
-    beforeAfterImage: "/images/before-after/case-face-05.png",
-    analysisImage: "/images/before-after/05_0.png",
+    beforeAfterImage: "/images/before-after/case-face-05.webp",
+    analysisImage: "/images/before-after/05_0.webp",
     sections: [
       {
         heading: "ストレートネックによる顎の前突",

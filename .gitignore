@@ -34,6 +34,12 @@ yarn-error.log*
 # vercel
 .vercel
 
+# 画像最適化の元PNGバックアップ（本番不要・サイズ大）
+/public/images/_original_png/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Claude Code ローカル設定・worktree（本番不要）
+/.claude/

@@ -22,7 +22,7 @@ export default function TherapistSection() {
           <ScrollReveal animation="fade-right" className="md:w-2/5 mb-8 md:mb-0">
             <div className="aspect-[3/4] rounded-2xl border border-greige/20 overflow-hidden relative">
               <Image
-                src="/images/therapist/therapist-portrait.png"
+                src="/images/therapist/therapist-portrait.webp"
                 alt="施術者 多賀勇輝"
                 fill
                 className="object-cover"

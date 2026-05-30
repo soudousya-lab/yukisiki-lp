@@ -19,28 +19,28 @@ const concerns = [
 
 const faceCases = [
   {
-    image: "/images/before-after/01_0.png",
+    image: "/images/before-after/01_0.webp",
     age: "20代女性",
     complaint: "出産を機に顔が変わってきた",
     approach: "顔の歪み、顔の立体感を修正",
     caseId: "case-01",
   },
   {
-    image: "/images/before-after/03_0.png",
+    image: "/images/before-after/03_0.webp",
     age: "30代女性",
     complaint: "むくまない顔にしたい",
     approach: "顎関節、上部頸椎、蝶形骨を修正",
     caseId: "case-03",
   },
   {
-    image: "/images/before-after/04_0.png",
+    image: "/images/before-after/04_0.webp",
     age: "40代女性",
     complaint: "年齢と共に顔が変わってきた",
     approach: "肩の内巻き、顎関節、顔比率を修正",
     caseId: "case-04",
   },
   {
-    image: "/images/before-after/05_0.png",
+    image: "/images/before-after/05_0.webp",
     age: "50代女性",
     complaint: "たるみと顔が伸びてきた",
     approach: "ストレートネック、顎関節、顔比率の修正",
