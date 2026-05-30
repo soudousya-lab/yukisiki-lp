@@ -141,7 +141,7 @@ export default function YugamiContent() {
             <SectionHeading en="Causes" ja="歪みの原因" light />
 
             <ScrollReveal animation="fade-up">
-              <p className="text-center text-sm md:text-base text-greige-dark leading-loose tracking-wide max-w-2xl mx-auto mb-14">
+              <p className="text-center text-sm md:text-base text-greige leading-loose tracking-wide max-w-2xl mx-auto mb-14">
                 顔の歪みは
                 <span className="text-gold-light">顎関節と首の骨の動きの連動</span>
                 が不具合を起こして起こることがほとんど。
@@ -170,7 +170,7 @@ export default function YugamiContent() {
                           <p className="text-sm text-warm-white tracking-wider mb-1">
                             {c.label}
                           </p>
-                          <p className="text-xs text-greige-dark leading-relaxed tracking-wide">
+                          <p className="text-xs text-greige leading-relaxed tracking-wide">
                             {c.desc}
                           </p>
                         </div>
@@ -199,7 +199,7 @@ export default function YugamiContent() {
                           <p className="text-sm text-warm-white tracking-wider mb-1">
                             {c.label}
                           </p>
-                          <p className="text-xs text-greige-dark leading-relaxed tracking-wide">
+                          <p className="text-xs text-greige leading-relaxed tracking-wide">
                             {c.desc}
                           </p>
                         </div>
@@ -213,7 +213,7 @@ export default function YugamiContent() {
             <ScrollReveal animation="fade-up" delay={400}>
               <div className="mt-14 text-center">
                 <div className="gold-line mx-auto mb-6" />
-                <p className="text-sm md:text-base text-greige-dark leading-loose tracking-wide max-w-2xl mx-auto">
+                <p className="text-sm md:text-base text-greige leading-loose tracking-wide max-w-2xl mx-auto">
                   どこに歪みの本質があるのか？
                   <br />
                   これを正しく分析し、取り除くことで
@@ -365,7 +365,7 @@ export default function YugamiContent() {
                   <span className="text-gold-light">骨格から整える。</span>
                 </p>
                 <div className="gold-line mx-auto my-6" />
-                <p className="text-sm text-greige-dark leading-loose tracking-wide mb-6">
+                <p className="text-sm text-greige leading-loose tracking-wide mb-6">
                   リンパを流す、筋肉をマッサージする、
                   <br className="hidden md:block" />
                   ただ強く押す——ではなく、
@@ -395,7 +395,7 @@ export default function YugamiContent() {
                 顔の歪みの専門解説
               </h2>
               <div className="gold-line-wide mx-auto mb-6" />
-              <p className="text-center text-sm md:text-base text-greige-dark leading-loose tracking-wide max-w-xl mx-auto mb-14">
+              <p className="text-center text-sm md:text-base text-greige leading-loose tracking-wide max-w-xl mx-auto mb-14">
                 解剖学に基づいた顔の歪みの専門記事を、
                 <br className="hidden md:block" />
                 毎週金曜に更新しています。

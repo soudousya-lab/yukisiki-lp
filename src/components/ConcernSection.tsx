@@ -76,7 +76,7 @@ export default function ConcernSection() {
         </ScrollReveal>
 
         <ScrollReveal animation="fade-up" delay={300}>
-          <p className="mt-10 text-center text-sm text-greige-dark tracking-wider leading-relaxed">
+          <p className="mt-10 text-center text-sm text-greige tracking-wider leading-relaxed">
             一つでも当てはまる方は、
             <br className="md:hidden" />
             ぜひYUKISIKIにご相談ください。
@@ -92,7 +92,7 @@ export default function ConcernSection() {
               height="50"
               viewBox="0 0 40 50"
               fill="none"
-              className="text-greige-dark"
+              className="text-greige"
             >
               <path
                 d="M20 0 C20 30, 35 35, 35 45"
@@ -118,7 +118,7 @@ export default function ConcernSection() {
               症例解説
             </h3>
             <div className="w-8 h-[2px] bg-gold mx-auto mb-6" />
-            <p className="text-xs md:text-sm text-greige-dark leading-relaxed tracking-wide max-w-md mx-auto">
+            <p className="text-xs md:text-sm text-greige leading-relaxed tracking-wide max-w-md mx-auto">
               お悩みの原因がどこにあって、どのように施術したのか？
               <br />
               実際の症例から紹介します。

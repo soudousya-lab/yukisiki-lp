@@ -115,11 +115,19 @@ export default function CaseContent() {
 
   const scrollToCase = useCallback((caseId: string, smooth = true) => {
     const el = document.getElementById(caseId);
-    if (el) {
-      const headerOffset = 72;
-      const top = el.getBoundingClientRect().top + window.scrollY - headerOffset;
-      window.scrollTo({ top, behavior: smooth ? "smooth" : "instant" });
-    }
+    if (!el) return;
+    const headerOffset = 80;
+    const compute = () => el.getBoundingClientRect().top + window.scrollY - headerOffset;
+
+    // smooth指定でも、ScrollRevealの遅延表示で目標位置がズレて
+    // 先頭に戻る不具合があるため、一旦instantで近づけてから
+    // 二段階で位置を補正する（レイアウト確定後に再計測）。
+    window.scrollTo({ top: compute(), behavior: smooth ? "smooth" : "instant" });
+    requestAnimationFrame(() => {
+      window.scrollTo({ top: compute(), behavior: smooth ? "smooth" : "instant" });
+    });
+    // 画像読み込み等で高さが変わるケースの最終補正
+    setTimeout(() => window.scrollTo({ top: compute(), behavior: "instant" }), 500);
   }, []);
 
   // ページ読み込み時にURLハッシュがあれば該当症例までスクロール

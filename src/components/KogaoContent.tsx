@@ -146,7 +146,7 @@ export default function KogaoContent() {
             <SectionHeading en="Our Approach" ja="YUKISIKIの小顔矯正" light />
 
             <ScrollReveal animation="fade-up">
-              <p className="text-center text-sm md:text-base text-greige-dark leading-loose tracking-wide max-w-2xl mx-auto mb-14">
+              <p className="text-center text-sm md:text-base text-greige leading-loose tracking-wide max-w-2xl mx-auto mb-14">
                 小顔矯正は正しく行えば
                 <span className="text-gold-light">&ldquo;価値のある施術&rdquo;</span>
                 です。
@@ -169,7 +169,7 @@ export default function KogaoContent() {
                   <h3 className="font-serif text-sm md:text-base tracking-wider text-warm-white mb-3">
                     {a.title}
                   </h3>
-                  <p className="text-xs text-greige-dark leading-relaxed tracking-wide">
+                  <p className="text-xs text-greige leading-relaxed tracking-wide">
                     {a.desc}
                   </p>
                 </div>
@@ -277,7 +277,7 @@ export default function KogaoContent() {
                 <ShimmerText>ご予約・お問い合わせ</ShimmerText>
               </h2>
               <div className="gold-line-wide mx-auto mb-8" />
-              <p className="text-sm text-greige-dark tracking-wider leading-relaxed mb-10">
+              <p className="text-sm text-greige tracking-wider leading-relaxed mb-10">
                 まずはお気軽にご相談ください。
                 <br />
                 あなたの骨格に合わせた最適な施術をご提案します。

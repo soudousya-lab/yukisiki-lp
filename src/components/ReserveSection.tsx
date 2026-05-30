@@ -15,7 +15,7 @@ export default function ReserveSection() {
             <ShimmerText>ご予約・お問い合わせ</ShimmerText>
           </h2>
           <div className="gold-line-wide mx-auto mb-8" />
-          <p className="text-sm text-greige-dark tracking-wider leading-relaxed mb-10">
+          <p className="text-sm text-greige tracking-wider leading-relaxed mb-10">
             完全予約制となっております。<br />お電話またはWeb予約にてお気軽にお問い合わせください。
           </p>
         </ScrollReveal>
