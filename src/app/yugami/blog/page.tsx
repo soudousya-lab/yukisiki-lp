@@ -19,33 +19,73 @@ export const metadata: Metadata = {
 
 const articles = [
   {
-    title: "頬骨・顎の左右非対称",
-    href: "/yugami/blog/symptoms/cheekbone-jaw-asymmetry",
-    desc: "顔の片側だけ頬骨が出っ張る、顎がずれる…その原因と対処法を解説。",
-    category: "Symptoms",
+    num: "No. 01",
+    title: "顔の歪みを引き起こす8つの習慣",
+    href: "/yugami/blog/causes/8-habits-cause-face-distortion",
+    desc: "日常の何気ない癖が顔の歪みを生む。今日からやめたい8つの習慣。",
+    category: "Causes",
   },
   {
-    title: "顔全体の左右非対称",
-    href: "/yugami/blog/symptoms/facial-asymmetry",
-    desc: "目の大きさ、口角の高さ…顔全体の非対称が起こるメカニズム。",
-    category: "Symptoms",
-  },
-  {
+    num: "No. 02",
     title: "目の左右非対称（目の高さ・大きさ）",
     href: "/yugami/blog/symptoms/eye-asymmetry",
     desc: "左右で目の高さや大きさが違う。その原因と整え方を解説。",
     category: "Symptoms",
   },
   {
+    num: "No. 03",
     title: "顎の歪み・顎関節",
     href: "/yugami/blog/symptoms/jaw-distortion",
     desc: "顎関節症と顔の歪みの深い関係。放置するとどうなるか。",
     category: "Symptoms",
   },
   {
-    title: "顔の歪みを引き起こす8つの習慣",
-    href: "/yugami/blog/causes/8-habits-cause-face-distortion",
-    desc: "日常の何気ない癖が顔の歪みを生む。今日からやめたい8つの習慣。",
+    num: "No. 04",
+    title: "顔全体の左右非対称",
+    href: "/yugami/blog/symptoms/facial-asymmetry",
+    desc: "目の大きさ、口角の高さ…顔全体の非対称が起こるメカニズム。",
+    category: "Symptoms",
+  },
+  {
+    num: "No. 05",
+    title: "頬骨・顎の左右非対称",
+    href: "/yugami/blog/symptoms/cheekbone-jaw-asymmetry",
+    desc: "顔の片側だけ頬骨が出っ張る、顎がずれる…その原因と対処法を解説。",
+    category: "Symptoms",
+  },
+  {
+    num: "No. 06",
+    title: "口角の高さ・口元の左右差はなぜ生まれるのか",
+    href: "/yugami/blog/symptoms/mouth-corner-asymmetry",
+    desc: "笑うと片方だけ上がる口角。表情筋とその土台の骨格から原因を解説。",
+    category: "Symptoms",
+  },
+  {
+    num: "No. 07",
+    title: "鼻の歪み・鼻筋の曲がりはなぜ起こるのか",
+    href: "/yugami/blog/symptoms/nose-asymmetry",
+    desc: "鼻筋が曲がって見える本当の原因は「土台」の左右差にある。骨格から読み解く。",
+    category: "Symptoms",
+  },
+  {
+    num: "No. 08",
+    title: "猫背・ストレートネックが顔を歪ませる",
+    href: "/yugami/blog/causes/posture-straight-neck",
+    desc: "骨盤から頭蓋骨まで。身体由来の歪みが顔に到達する連鎖のメカニズム。",
+    category: "Causes",
+  },
+  {
+    num: "No. 09",
+    title: "噛み合わせと顔の歪み——咬合のズレが骨格に連鎖するメカニズム",
+    href: "/yugami/blog/causes/occlusion-face-distortion",
+    desc: "咬合のズレと骨格の歪みは「鶏と卵」。双方向の悪循環と歯科治療との棲み分けを解説。",
+    category: "Causes",
+  },
+  {
+    num: "No. 10",
+    title: "エラボトックスと顔の歪み——咬筋・側頭筋・外側翼突筋の代償作用",
+    href: "/yugami/blog/causes/botox-masseter-compensation",
+    desc: "咬筋だけを弱めたとき、筋肉の連動上なにが起こり得るか。筋肉由来・骨格由来のエラ張りの見分け方も解説。",
     category: "Causes",
   },
 ];
@@ -106,7 +146,7 @@ export default function YugamiBlogIndex() {
                 className="group block rounded-2xl p-6 md:p-8 bg-warm-white border border-greige/30 hover:border-gold/40 hover:shadow-md transition-all"
               >
                 <p className="text-[10px] tracking-[0.25em] text-gold uppercase mb-3">
-                  {a.category}
+                  {a.num} — {a.category}
                 </p>
                 <h2 className="font-serif text-base md:text-lg tracking-wider text-charcoal mb-3 leading-relaxed">
                   {a.title}

@@ -32,6 +32,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
+  const blogIndex: MetadataRoute.Sitemap = [
+    {
+      url: `${BASE_URL}/yugami/blog`,
+      lastModified: new Date("2026-06-10"),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  ];
+
+  // 2026-05-13 公開の5本
   const blogArticles: MetadataRoute.Sitemap = [
     "/yugami/blog/causes/8-habits-cause-face-distortion",
     "/yugami/blog/symptoms/eye-asymmetry",
@@ -45,5 +55,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...blogArticles];
+  // 2026-06-10 公開の5本
+  const newBlogArticles: MetadataRoute.Sitemap = [
+    "/yugami/blog/symptoms/mouth-corner-asymmetry",
+    "/yugami/blog/symptoms/nose-asymmetry",
+    "/yugami/blog/causes/posture-straight-neck",
+    "/yugami/blog/causes/occlusion-face-distortion",
+    "/yugami/blog/causes/botox-masseter-compensation",
+  ].map((path) => ({
+    url: `${BASE_URL}${path}`,
+    lastModified: new Date("2026-06-10"),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  return [...staticPages, ...blogIndex, ...blogArticles, ...newBlogArticles];
 }

@@ -405,9 +405,19 @@ export default function YugamiContent() {
             <ScrollReveal className="grid md:grid-cols-3 gap-5 md:gap-6 mb-10" stagger={150}>
               {[
                 {
-                  num: "No. 05 — Symptoms",
-                  title: "片側だけ頬骨が出る・エラが張る本当の理由",
-                  href: "/yugami/blog/symptoms/cheekbone-jaw-asymmetry",
+                  num: "No. 01 — Causes",
+                  title: "顔の歪みの本当の原因——日常の8つの癖が顔を曲げていく医学的メカニズム",
+                  href: "/yugami/blog/causes/8-habits-cause-face-distortion",
+                },
+                {
+                  num: "No. 02 — Symptoms",
+                  title: "なぜ目の高さ・大きさは左右で違ってくるのか——医学的な原因と整え方",
+                  href: "/yugami/blog/symptoms/eye-asymmetry",
+                },
+                {
+                  num: "No. 03 — Symptoms",
+                  title: "顎の歪み・左右のズレの医学的原因——上部頸椎と顎関節の連動から読み解く",
+                  href: "/yugami/blog/symptoms/jaw-distortion",
                 },
                 {
                   num: "No. 04 — Symptoms",
@@ -415,9 +425,34 @@ export default function YugamiContent() {
                   href: "/yugami/blog/symptoms/facial-asymmetry",
                 },
                 {
-                  num: "No. 03 — Symptoms",
-                  title: "顎の歪み・左右のズレの医学的原因——上部頸椎と顎関節の連動から読み解く",
-                  href: "/yugami/blog/symptoms/jaw-distortion",
+                  num: "No. 05 — Symptoms",
+                  title: "片側だけ頬骨が出る・エラが張る本当の理由",
+                  href: "/yugami/blog/symptoms/cheekbone-jaw-asymmetry",
+                },
+                {
+                  num: "No. 06 — Symptoms",
+                  title: "口角の高さ・口元の左右差はなぜ生まれるのか——医学的な原因と整え方",
+                  href: "/yugami/blog/symptoms/mouth-corner-asymmetry",
+                },
+                {
+                  num: "No. 07 — Symptoms",
+                  title: "鼻の歪み・鼻筋の曲がりはなぜ起こるのか——骨格から読み解く医学的原因",
+                  href: "/yugami/blog/symptoms/nose-asymmetry",
+                },
+                {
+                  num: "No. 08 — Causes",
+                  title: "猫背・ストレートネックが顔を歪ませる——身体由来の歪みのメカニズム",
+                  href: "/yugami/blog/causes/posture-straight-neck",
+                },
+                {
+                  num: "No. 09 — Causes",
+                  title: "噛み合わせと顔の歪み——咬合のズレが骨格に連鎖する医学的メカニズム",
+                  href: "/yugami/blog/causes/occlusion-face-distortion",
+                },
+                {
+                  num: "No. 10 — Causes",
+                  title: "エラボトックスと顔の歪み——咬筋・側頭筋・外側翼突筋の代償作用",
+                  href: "/yugami/blog/causes/botox-masseter-compensation",
                 },
               ].map((article) => (
                 <a
@@ -438,17 +473,17 @@ export default function YugamiContent() {
               ))}
             </ScrollReveal>
 
-            {/* 記事数が10本を超えたら下記の View all を有効化 */}
-            {/*
-            <div className="flex justify-center">
-              <a
-                href="/yugami/blog"
-                className="text-xs tracking-[0.25em] text-gold uppercase border border-gold/40 px-7 py-3 hover:bg-gold hover:text-charcoal transition-colors"
-              >
-                View all entries →
-              </a>
-            </div>
-            */}
+            {/* ジャーナル一覧（/yugami/blog）への導線 */}
+            <ScrollReveal animation="fade-up" delay={200}>
+              <div className="flex justify-center">
+                <a
+                  href="/yugami/blog"
+                  className="text-xs tracking-[0.25em] text-gold uppercase border border-gold/40 px-7 py-3 hover:bg-gold hover:text-charcoal transition-colors"
+                >
+                  コラム一覧を見る →
+                </a>
+              </div>
+            </ScrollReveal>
           </div>
         </section>
 
