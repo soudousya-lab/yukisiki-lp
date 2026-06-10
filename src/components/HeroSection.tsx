@@ -17,10 +17,13 @@ export default function HeroSection() {
 
   return (
     // pt-16/md:pt-20 = 固定ヘッダーの高さ分。これでヘッダーが
-    // 上から出ても画像全体が隠れずに表示される（PC・スマホ共通）
-    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-charcoal pt-16 md:pt-20">
-      {/* 画像：2560×1440=16:9。aspect-[16/9]で全体を無切れ表示 */}
-      <div className="relative w-full aspect-[16/9]">
+    // 上から出ても画像全体が隠れずに表示される
+    // スマホ: 16:9画像を縦画面の中央に置くと上に大きな空白が出るため
+    // min-h-screen/justify-centerはmd以上のみ。モバイルはヘッダー直下に画像
+    <section className="relative md:min-h-screen flex flex-col md:justify-center overflow-hidden bg-charcoal pt-16 md:pt-20 pb-24">
+      {/* 画像：2560×1440=16:9。aspect-[16/9]で全体を無切れ表示
+          PC: 画像+CTA+SCROLLが1画面に収まるよう高さ上限（超過分はobject-containで縮小） */}
+      <div className="relative w-full aspect-[16/9] md:max-h-[calc(100vh-21rem)]">
         <Image
           src="/images/hero/hero.webp"
           alt="“骨”から変わる、唯一無二の小顔矯正｜中目黒の小顔・顔の歪み矯正専門サロン YUKISIKI"

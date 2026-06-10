@@ -163,6 +163,13 @@ body {
 }
 
 /* ===== Scroll Reveal System ===== */
+/* fade-left/rightの待機位置（translateX±2.5rem）がビューポートを
+   はみ出して横スクロールを生むのを防ぐ（clipはsticky・内部カルーセルに無影響） */
+html,
+body {
+  overflow-x: clip;
+}
+
 .reveal-hidden {
   opacity: 0;
   will-change: opacity, transform;
