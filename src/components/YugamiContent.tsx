@@ -395,11 +395,23 @@ export default function YugamiContent() {
                 顔の歪みの専門解説
               </h2>
               <div className="gold-line-wide mx-auto mb-6" />
-              <p className="text-center text-sm md:text-base text-greige leading-loose tracking-wide max-w-xl mx-auto mb-14">
+              <p className="text-center text-sm md:text-base text-greige leading-loose tracking-wide max-w-xl mx-auto mb-8">
                 解剖学に基づいた顔の歪みの専門記事を、
                 <br className="hidden md:block" />
                 毎週金曜に更新しています。
               </p>
+            </ScrollReveal>
+
+            {/* ジャーナル一覧（/yugami/blog）への導線 */}
+            <ScrollReveal animation="fade-up" delay={100}>
+              <div className="flex justify-center mb-14">
+                <a
+                  href="/yugami/blog"
+                  className="text-xs tracking-[0.25em] text-gold uppercase border border-gold/40 px-7 py-3 hover:bg-gold hover:text-charcoal transition-colors"
+                >
+                  コラム一覧を見る →
+                </a>
+              </div>
             </ScrollReveal>
 
             <ScrollReveal className="grid md:grid-cols-3 gap-5 md:gap-6 mb-10" stagger={150}>
@@ -471,18 +483,6 @@ export default function YugamiContent() {
                   </span>
                 </a>
               ))}
-            </ScrollReveal>
-
-            {/* ジャーナル一覧（/yugami/blog）への導線 */}
-            <ScrollReveal animation="fade-up" delay={200}>
-              <div className="flex justify-center">
-                <a
-                  href="/yugami/blog"
-                  className="text-xs tracking-[0.25em] text-gold uppercase border border-gold/40 px-7 py-3 hover:bg-gold hover:text-charcoal transition-colors"
-                >
-                  コラム一覧を見る →
-                </a>
-              </div>
             </ScrollReveal>
           </div>
         </section>
