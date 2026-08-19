@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import KogaoContent from "@/components/KogaoContent";
 import JsonLd from "@/components/JsonLd";
-import { breadcrumbSchema, serviceSchema } from "@/lib/structuredData";
+import { kogaoAiOverview } from "@/lib/aiOverviewContent";
+import { breadcrumbSchema, faqSchema, serviceSchema } from "@/lib/structuredData";
 
 export const metadata: Metadata = {
   title: "小顔矯正とは | YUKISIKI 中目黒",
@@ -26,6 +27,7 @@ export default function KogaoPage() {
           url: "/kogao",
         })}
       />
+      <JsonLd data={faqSchema(kogaoAiOverview.faqs)} />
       <KogaoContent />
     </>
   );

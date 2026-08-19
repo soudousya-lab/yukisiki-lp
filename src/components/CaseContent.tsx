@@ -5,6 +5,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { FiArrowLeft } from "react-icons/fi";
 import ScrollReveal from "./ScrollReveal";
+import AnswerSummary from "./AnswerSummary";
+import { caseAiOverview } from "@/lib/aiOverviewContent";
 
 const cases = [
   {
@@ -201,6 +203,8 @@ export default function CaseContent() {
             </ScrollReveal>
           </div>
         </section>
+
+        <AnswerSummary content={caseAiOverview} />
 
         {/* ===== ナビスライダー ===== */}
         <section className="bg-ivory pb-6 md:pb-10 overflow-hidden">

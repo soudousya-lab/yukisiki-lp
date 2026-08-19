@@ -7,6 +7,8 @@ import SectionHeading from "./SectionHeading";
 import ScrollReveal from "./ScrollReveal";
 import ShimmerText from "./ShimmerText";
 import FloatingParticles from "./FloatingParticles";
+import AnswerSummary from "./AnswerSummary";
+import { yugamiAiOverview } from "@/lib/aiOverviewContent";
 
 const faceCauses = [
   { label: "片方噛み", desc: "片側だけで噛む癖が顎関節に左右差を生む" },
@@ -97,6 +99,8 @@ export default function YugamiContent() {
             <div className="gold-line-wide mx-auto mt-10 animate-fade-in" style={{ animationDelay: "0.8s" }} />
           </div>
         </section>
+
+        <AnswerSummary content={yugamiAiOverview} />
 
         {/* 顔の歪み矯正とは */}
         <section className="py-20 md:py-28 bg-warm-white">

@@ -6,6 +6,8 @@ import SectionHeading from "./SectionHeading";
 import ScrollReveal from "./ScrollReveal";
 import ShimmerText from "./ShimmerText";
 import FloatingParticles from "./FloatingParticles";
+import AnswerSummary from "./AnswerSummary";
+import { kogaoAiOverview } from "@/lib/aiOverviewContent";
 
 const approaches = [
   {
@@ -113,6 +115,8 @@ export default function KogaoContent() {
             <div className="gold-line-wide mx-auto mt-10 animate-fade-in" style={{ animationDelay: "0.8s" }} />
           </div>
         </section>
+
+        <AnswerSummary content={kogaoAiOverview} />
 
         {/* 小顔矯正とは */}
         <section className="py-20 md:py-28 bg-warm-white">

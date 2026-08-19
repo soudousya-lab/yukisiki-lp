@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import YugamiContent from "@/components/YugamiContent";
 import JsonLd from "@/components/JsonLd";
-import { breadcrumbSchema, serviceSchema } from "@/lib/structuredData";
+import { yugamiAiOverview } from "@/lib/aiOverviewContent";
+import { breadcrumbSchema, faqSchema, serviceSchema } from "@/lib/structuredData";
 
 export const metadata: Metadata = {
   title: "顔の歪み矯正とは | YUKISIKI 中目黒",
@@ -26,6 +27,7 @@ export default function YugamiPage() {
           url: "/yugami",
         })}
       />
+      <JsonLd data={faqSchema(yugamiAiOverview.faqs)} />
       <YugamiContent />
     </>
   );

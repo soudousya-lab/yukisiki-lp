@@ -16,13 +16,19 @@ import Footer from "@/components/Footer";
 import FloatingCTA from "@/components/FloatingCTA";
 import GradientDivider from "@/components/GradientDivider";
 import ScrollDepthTracker from "@/components/ScrollDepthTracker";
+import AnswerSummary from "@/components/AnswerSummary";
+import JsonLd from "@/components/JsonLd";
+import { homeAiOverview } from "@/lib/aiOverviewContent";
+import { faqSchema } from "@/lib/structuredData";
 
 export default function Home() {
   return (
     <>
+      <JsonLd data={faqSchema(homeAiOverview.faqs)} />
       <Header />
       <main>
         <HeroSection />
+        <AnswerSummary content={homeAiOverview} />
         <BeforeAfterSection />
         <AboutSection />
         <GradientDivider from="var(--color-warm-white)" to="var(--color-charcoal)" />

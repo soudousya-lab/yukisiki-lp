@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import CaseContent from "@/components/CaseContent";
 import JsonLd from "@/components/JsonLd";
-import { breadcrumbSchema } from "@/lib/structuredData";
+import { caseAiOverview } from "@/lib/aiOverviewContent";
+import { breadcrumbSchema, faqSchema } from "@/lib/structuredData";
 
 export const metadata: Metadata = {
   title: "症例解説 | YUKISIKI 中目黒",
@@ -18,6 +19,7 @@ export default function CasePage() {
           { name: "症例解説", url: "/case" },
         ])}
       />
+      <JsonLd data={faqSchema(caseAiOverview.faqs)} />
       <CaseContent />
     </>
   );
